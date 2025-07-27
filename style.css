@@ -341,10 +341,14 @@ section {
 }
 
 .sfx-section.sfx26 {
-    /* Use a tan backdrop for the middle section to break up the color palette.
-       We deliberately omit a GIF here to reduce distraction and avoid flashing. */
+    /* Reintroduce an animated GIF for the cream‑colored middle section. Scale it to 200% width
+       and crop vertically so the section height remains reasonable. */
+    background-image: url('assets/sfx26.gif');
     background-color: #f5e9dc;
-    background-image: none;
+    background-size: 200% 100%;
+    background-repeat: no-repeat;
+    /* Reduce the minimum height for the middle section so it isn’t as tall as the others */
+    min-height: 80vh;
 }
 
 /* Container for the stat sheet overlay */
@@ -375,8 +379,8 @@ section {
     color: #352315;
     /* Remove tinted backgrounds on desktop so the parchment artwork shows through */
     background-color: transparent;
-    /* Apply large padding on all sides (approx 100px) to ensure the text sits well within the parchment */
-    padding: 6rem;
+    /* Apply very large padding on all sides (approx 125px) to ensure the text sits well within the parchment */
+    padding: 8rem;
     border-radius: 8px;
     /* Ensure long words wrap within the card */
     word-break: break-word;
