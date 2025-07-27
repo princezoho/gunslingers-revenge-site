@@ -134,6 +134,11 @@ section {
     margin-bottom: 3rem;
 }
 
+/* Remove spacing for SFX sections so the backgrounds butt up against each other without dead white bars */
+.sfx-section {
+    margin-bottom: 0;
+}
+
 .feature-list {
     list-style: none;
     padding-left: 1rem;
@@ -301,6 +306,12 @@ section {
     position: relative;
     overflow: hidden;
     width: 100%;
+    margin: 0;
+}
+
+/* Ensure consecutive SFX sections do not create a gap between them */
+.sfx-section + .sfx-section {
+    margin-top: 0;
 }
 
 /* Assign unique GIF backgrounds to each SFX section variant */
@@ -337,8 +348,8 @@ section {
     width: 80%;
     text-align: center;
     color: #3b1d0b;
-    /* Add a light translucent background behind the text to improve readability on busy GIF backgrounds. */
-    background-color: rgba(253, 248, 243, 0.85);
+    /* Remove the tinted box behind text so it sits directly on the stat sheet. */
+    background-color: transparent;
     padding: 1rem;
     border-radius: 8px;
 }
