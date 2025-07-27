@@ -103,6 +103,15 @@ a:hover {
     top: 0;
 }
 
+/* Style for textual logo in the header */
+.site-nav .logo-text {
+    font-family: 'Wanted', sans-serif;
+    font-size: 2rem;
+    color: #f5e9dc;
+    font-weight: 700;
+    letter-spacing: -0.02rem;
+}
+
 .site-nav .logo {
     /* Limit logo height so it doesn’t overpower the hero section */
     max-height: 70px;
@@ -360,6 +369,8 @@ section {
     background-color: transparent;
     padding: 1rem;
     border-radius: 8px;
+    /* Ensure long words wrap within the card */
+    word-break: break-word;
 }
 
 .stat-content h2 {
@@ -373,4 +384,25 @@ section {
     font-size: 1rem;
     line-height: 1.4;
     margin-bottom: 0.5rem;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+    .stat-sheet {
+        max-width: 90%;
+        width: 95%;
+    }
+    .stat-content {
+        width: 85%;
+        /* Reduce font size slightly on mobile for better fit */
+        font-size: 0.9rem;
+    }
+}
+
+/* Style blog article paragraphs separately with a clean sans‑serif font */
+article p {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.65;
+    color: #352315;
 }

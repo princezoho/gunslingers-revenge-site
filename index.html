@@ -12,8 +12,8 @@
 <body>
     <!-- Top navigation with logo on a dark background -->
     <nav class="site-nav">
-        <!-- Use the transparent PNG logo so the dark header shows through without a white box -->
-        <img src="assets/logo-gunslingers.png" alt="Gunslingers logo" class="logo">
+        <!-- Replace the logo image with a textual logo to avoid any background artifact -->
+        <span class="logo-text">Gunslinger&apos;s Revenge</span>
     </nav>
     <!-- Hero section with animated background. The background is defined via CSS on the .hero class. -->
     <header class="hero">
@@ -25,7 +25,8 @@
     </header>
 
     <!-- About the Game section placed on a dynamic background with stat‑sheet overlay -->
-    <section id="game" class="sfx-section vfx">
+    <!-- First section uses the green effect GIF -->
+    <section id="game" class="sfx-section sfx17">
         <div class="stat-sheet">
             <img src="assets/stat-sheet.png" alt="Blank stat sheet" class="stat-sheet-image">
             <div class="stat-content">
@@ -37,7 +38,8 @@
     </section>
 
     <!-- Deck‑building strategy section on another dynamic background -->
-    <section class="sfx-section sfx17">
+    <!-- Second section uses the tan effect GIF -->
+    <section class="sfx-section sfx26">
         <div class="stat-sheet">
             <img src="assets/stat-sheet.png" alt="Blank stat sheet" class="stat-sheet-image">
             <div class="stat-content">
@@ -49,7 +51,8 @@
     </section>
 
     <!-- Legend forging section on a third dynamic background -->
-    <section class="sfx-section sfx26">
+    <!-- Third section returns to the green effect GIF to create a balanced flow -->
+    <section class="sfx-section sfx17">
         <div class="stat-sheet">
             <img src="assets/stat-sheet.png" alt="Blank stat sheet" class="stat-sheet-image">
             <div class="stat-content">
