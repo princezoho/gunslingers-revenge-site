@@ -368,29 +368,36 @@ section {
     left: 50%;
     transform: translate(-50%, -50%);
     /* Constrain the overlay to ensure paragraphs stay inside the parchment while providing more space */
-    width: 82%;
+    /* Make the content area wider so the paragraphs don’t overflow outside the card on desktop */
+    width: 90%;
     text-align: center;
-    color: #3b1d0b;
+    /* Use a near‑black brown for the text on the parchment to improve contrast */
+    color: #352315;
     /* Remove tinted backgrounds on desktop so the parchment artwork shows through */
     background-color: transparent;
     /* Generous padding gives the text breathing room */
-    padding: 3.5rem;
+    padding: 4rem;
     border-radius: 8px;
     /* Ensure long words wrap within the card */
     word-break: break-word;
 }
 
 .stat-content h2 {
-    margin-bottom: 0.5rem;
-    font-size: 2rem;
-    /* Override global heading color so headings on the parchment remain dark */
-    color: #3b1d0b;
+    /* Provide extra space below the heading */
+    margin-bottom: 0.75rem;
+    /* Increase the heading size on desktop for better hierarchy */
+    font-size: 3rem;
+    /* Use a near‑black colour for headings on the parchment for strong contrast */
+    color: #111111;
 }
 
 .stat-content p {
-    font-size: 0.95rem;
-    line-height: 1.4;
-    margin-bottom: 0.5rem;
+    /* Enlarge paragraph text slightly and adjust spacing for readability */
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+    /* Use near‑black text for high contrast on the parchment */
+    color: #111111;
 }
 
 /* Responsive adjustments for smaller screens */
