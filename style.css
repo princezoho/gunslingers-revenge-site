@@ -2,7 +2,8 @@
 /* Load the Wanted font provided by the user. */
 @font-face {
     font-family: 'Wanted';
-    src: url('assets/fonts/wanted.ttf') format('truetype');
+    /* Load the Wanted font from the assets directory. It lives at assets/wanted.ttf in the repository root. */
+    src: url('assets/wanted.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -95,6 +96,8 @@ a:hover {
     background-color: #0a0a0a; /* Dark header reminiscent of the original site */
     width: 100%;
     z-index: 1000;
+    position: sticky;
+    top: 0;
 }
 
 .site-nav .logo {
@@ -125,11 +128,7 @@ a:hover {
 }
 
 /* Sections */
-main {
-    padding: 2rem 1rem;
-    max-width: 960px;
-    margin: 0 auto;
-}
+/* Remove the constrained main container; sections should span full width unless explicitly constrained. */
 
 section {
     margin-bottom: 3rem;
@@ -282,17 +281,39 @@ section {
     font-weight: bold;
 }
 
+/* Constrain the blog preview section to a manageable width and center it. */
+.blog-preview {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
 /* SFX section used for dynamic backgrounds. Fills the width of the page and uses an animated GIF as a backdrop. */
+/* Base SFX section styling: sets layout and spacing. Specific backgrounds are defined per variant class below. */
+/* SFX sections fill the full viewport width and use dynamic backgrounds. */
 .sfx-section {
-    background-image: url('assets/vfx.gif');
     background-size: cover;
     background-position: center;
-    padding: 4rem 1rem;
+    padding: 4rem 0;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
+    width: 100%;
+}
+
+/* Assign unique GIF backgrounds to each SFX section variant */
+.sfx-section.vfx {
+    background-image: url('assets/vfx.gif');
+}
+
+.sfx-section.sfx17 {
+    background-image: url('assets/sfx17.gif');
+}
+
+.sfx-section.sfx26 {
+    background-image: url('assets/sfx26.gif');
 }
 
 /* Container for the stat sheet overlay */
@@ -316,6 +337,10 @@ section {
     width: 80%;
     text-align: center;
     color: #3b1d0b;
+    /* Add a light translucent background behind the text to improve readability on busy GIF backgrounds. */
+    background-color: rgba(253, 248, 243, 0.85);
+    padding: 1rem;
+    border-radius: 8px;
 }
 
 .stat-content h2 {
