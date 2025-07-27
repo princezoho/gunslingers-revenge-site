@@ -368,15 +368,15 @@ section {
     left: 50%;
     transform: translate(-50%, -50%);
     /* Constrain the overlay to ensure paragraphs stay inside the parchment while providing more space */
-    /* Make the content area much wider on desktop so paragraphs stay within the card */
-    width: 95%;
+    /* Make the content area narrower on desktop so there’s ample margin between the text and the parchment edges */
+    width: 80%;
     text-align: center;
     /* Use a near‑black brown for the text on the parchment to improve contrast */
     color: #352315;
     /* Remove tinted backgrounds on desktop so the parchment artwork shows through */
     background-color: transparent;
-    /* Generous padding gives the text breathing room; increase to create more margin */
-    padding: 5rem;
+    /* Apply large padding on all sides (approx 100px) to ensure the text sits well within the parchment */
+    padding: 6rem;
     border-radius: 8px;
     /* Ensure long words wrap within the card */
     word-break: break-word;
