@@ -1,0 +1,16 @@
+/* Custom overrides to adjust layout */
+
+/* Shift parchment image slightly to the right */
+.stat-sheet-image {
+  margin-left: 5px !important;
+}
+
+/* Force blog posts to stack vertically on all screen sizes */
+.posts {
+  grid-template-columns: 1fr !important;
+}
+
+/* Increase padding inside stat sheets to roughly 140 px */
+.stat-content {
+  padding: 8.75rem !important;
+}
