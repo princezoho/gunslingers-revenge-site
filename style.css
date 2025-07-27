@@ -322,6 +322,8 @@ section {
     width: 100%;
     /* No margin so sections butt up seamlessly */
     margin: 0;
+    /* Set a minimum height so the GIF backgrounds occupy more vertical space */
+    min-height: 100vh;
 }
 
 /* Ensure consecutive SFX sections do not create a gap between them */
@@ -339,14 +341,18 @@ section {
 }
 
 .sfx-section.sfx26 {
-    background-image: url('assets/sfx26.gif');
+    /* Use a tan backdrop for the middle section to break up the color palette.
+       We deliberately omit a GIF here to reduce distraction and avoid flashing. */
+    background-color: #f5e9dc;
+    background-image: none;
 }
 
 /* Container for the stat sheet overlay */
 /* Constrain the stat‑sheet overlay a bit wider on larger screens for better use of space */
 .stat-sheet {
     position: relative;
-    max-width: 900px;
+    /* Allow the stat sheet to grow a bit wider on larger screens */
+    max-width: 1000px;
     width: 95%;
     margin: 0 auto;
 }
@@ -361,13 +367,14 @@ section {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* Narrower width ensures the text stays comfortably within the parchment */
-    width: 70%;
+    /* Slightly wider width ensures longer paragraphs remain inside the parchment on desktop */
+    width: 80%;
     text-align: center;
     color: #3b1d0b;
     /* Remove the tinted box behind text so it sits directly on the stat sheet. */
     background-color: transparent;
-    padding: 1rem;
+    /* Increase padding to give the text breathing room */
+    padding: 2.5rem;
     border-radius: 8px;
     /* Ensure long words wrap within the card */
     word-break: break-word;
@@ -389,13 +396,22 @@ section {
 /* Responsive adjustments for smaller screens */
 @media (max-width: 600px) {
     .stat-sheet {
-        max-width: 90%;
-        width: 95%;
+        max-width: 100%;
+        width: 100%;
     }
     .stat-content {
-        width: 85%;
-        /* Reduce font size slightly on mobile for better fit */
-        font-size: 0.9rem;
+        /* Expand the content area further on small screens so text fits comfortably */
+        width: 95%;
+        /* Increase padding and allow more space on mobile */
+        padding: 2.5rem;
+        /* Increase font size for readability */
+        font-size: 1rem;
+    }
+    /* On mobile, make SFX sections taller to showcase the GIF backgrounds */
+    .sfx-section {
+        /* On small screens, give even more vertical space to show off the animated backgrounds */
+        min-height: 120vh;
+        padding: 10rem 0;
     }
 }
 
@@ -405,4 +421,26 @@ article p {
     font-size: 14px;
     line-height: 1.65;
     color: #352315;
+}
+
+/* Blog post styling: apply only to top‑level articles in the blog pages. 
+   Give the content a white background and dark grey text for improved readability. */
+main > article {
+    background-color: #ffffff;
+    color: #333333;
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 2rem auto;
+    max-width: 960px;
+}
+main > article h1,
+main > article h2,
+main > article h3 {
+    color: #352315;
+}
+main > article p {
+    color: #333333;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.65;
 }
