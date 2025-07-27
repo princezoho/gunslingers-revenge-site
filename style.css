@@ -367,14 +367,14 @@ section {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* Constrain the overlay to a reasonable width so paragraphs stay inside the parchment */
-    width: 80%;
+    /* Constrain the overlay to ensure paragraphs stay inside the parchment while providing more space */
+    width: 82%;
     text-align: center;
     color: #3b1d0b;
     /* Remove tinted backgrounds on desktop so the parchment artwork shows through */
     background-color: transparent;
     /* Generous padding gives the text breathing room */
-    padding: 3rem;
+    padding: 3.5rem;
     border-radius: 8px;
     /* Ensure long words wrap within the card */
     word-break: break-word;
@@ -388,7 +388,7 @@ section {
 }
 
 .stat-content p {
-    font-size: 1rem;
+    font-size: 0.95rem;
     line-height: 1.4;
     margin-bottom: 0.5rem;
 }
