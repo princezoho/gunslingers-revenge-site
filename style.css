@@ -352,8 +352,8 @@ section {
 .stat-sheet {
     position: relative;
     /* Allow the stat sheet to grow a bit wider on larger screens */
-    max-width: 1000px;
-    width: 95%;
+    max-width: 1100px;
+    width: 98%;
     margin: 0 auto;
 }
 
@@ -367,14 +367,14 @@ section {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* Slightly wider width ensures longer paragraphs remain inside the parchment on desktop */
-    width: 80%;
+    /* Wider content area allows longer paragraphs to fit on the parchment */
+    width: 85%;
     text-align: center;
     color: #3b1d0b;
-    /* Remove the tinted box behind text so it sits directly on the stat sheet. */
+    /* Remove tinted backgrounds on desktop so the parchment artwork shows through */
     background-color: transparent;
-    /* Increase padding to give the text breathing room */
-    padding: 2.5rem;
+    /* Generous padding gives the text breathing room */
+    padding: 4rem;
     border-radius: 8px;
     /* Ensure long words wrap within the card */
     word-break: break-word;
@@ -395,23 +395,45 @@ section {
 
 /* Responsive adjustments for smaller screens */
 @media (max-width: 600px) {
+    /* On mobile, hide the parchment artwork and present the text on a simple panel */
     .stat-sheet {
         max-width: 100%;
         width: 100%;
     }
+    .stat-sheet-image {
+        display: none;
+    }
     .stat-content {
-        /* Expand the content area further on small screens so text fits comfortably */
+        /* Reset positioning so content flows naturally when the stat sheet image is hidden */
+        position: static;
+        transform: none;
+        left: auto;
+        top: auto;
+        margin: 0 auto;
         width: 95%;
-        /* Increase padding and allow more space on mobile */
-        padding: 2.5rem;
-        /* Increase font size for readability */
+        /* Provide a subtle tan background behind the text on mobile */
+        background-color: #f5e9dc;
+        color: #111111;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .stat-content h2 {
+        /* Darken headings on mobile for better contrast against the light panel */
+        color: #352315;
+        font-size: 1.8rem;
+        margin-bottom: 0.75rem;
+    }
+    .stat-content p {
+        color: #352315;
         font-size: 1rem;
+        line-height: 1.5;
     }
     /* On mobile, make SFX sections taller to showcase the GIF backgrounds */
     .sfx-section {
         /* On small screens, give even more vertical space to show off the animated backgrounds */
         min-height: 120vh;
-        padding: 10rem 0;
+        padding: 8rem 0;
     }
 }
 
