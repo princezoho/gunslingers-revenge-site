@@ -486,3 +486,27 @@ main > article p {
     font-size: 14px;
     line-height: 1.65;
 }
+/* Custom overrides for stat sheet and blog cards */
+/* Shift parchment image left */
+.stat-sheet-image {
+    margin-left: -40px;
+}
+
+/* Increase padding inside the stat sheets */
+.stat-content {
+    padding: 8.75rem !important;
+}
+
+/* Blog preview card styling */
+.post {
+    background-color: #f9efe3;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.post h3 a {
+    color: #3b1d0b;
+}
+.post p {
+    color: #5a4633;
+}
