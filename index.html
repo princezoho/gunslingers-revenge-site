@@ -11,8 +11,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Site navigation removed to prevent overlapping with hero; the main title below carries branding. -->
-    <!-- Hero section -->
+    <!-- Top navigation with logo on a dark background -->
+    <nav class="site-nav">
+        <img src="assets/logo-gunslingers.jpg" alt="Gunslingers logo" class="logo">
+    </nav>
+    <!-- Hero section with animated background. The background is defined via CSS on the .hero class. -->
     <header class="hero">
         <div class="hero-overlay">
             <h1 class="hero-title">Gunslinger's Revenge</h1>
@@ -66,6 +69,18 @@
                 <div class="town-text">
                     <h2>Visit Slingfield</h2>
                     <p>Discover the heart of <em>Gunslinger&rsquo;s Revenge</em>: Slingfield, a lively Wild West town where cowpokes gather to trade, spin tall tales and hone their decks. The General Store, inspired by the original Gunslingers microverse art, hides secrets, quests and powerful upgrades waiting to be uncovered.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic SFX section: uses an animated effect as the section background and overlays a stat sheet for text. This helps showcase special effects while keeping text readable. -->
+        <section class="sfx-section">
+            <div class="stat-sheet">
+                <img src="assets/stat-sheet.png" alt="Blank stat sheet" class="stat-sheet-image">
+                <div class="stat-content">
+                    <h2>Upgrade Your Deck</h2>
+                    <p>Spend your hard‑earned points on stat boosts and powerful abilities. Within the shaded corners of Slingfield’s saloon you’ll meet mentors who will hone your skills and teach you new tricks.</p>
+                    <p>Make strategic choices on your sheet; every point invested helps your gunslinger stand tall against the toughest foes.</p>
                 </div>
             </div>
         </section>
