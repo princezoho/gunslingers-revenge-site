@@ -1,14 +1,19 @@
 /* Custom overrides to adjust layout */
 
-/* Shift parchment image slightly to the left compared to the default right‑shift.
-   Setting margin-left to 0px removes the previous positive offset and recenters the image. */
+/* Shift the parchment image a bit to the left compared to the default right‑shift.
+   Applying a small positive margin‑left value inverts the previous offset and
+   brings the image slightly closer to the page edge. */
 .stat-sheet-image {
-  margin-left: 0px !important;
+  margin-left: 5px !important;
 }
 
 /* Force blog posts to stack vertically on all screen sizes */
 .posts {
   grid-template-columns: 1fr !important;
+  /* Add horizontal padding so blog posts have breathing room
+     from the page edges. 1.25rem ≈ 20px */
+  padding-left: 1.25rem !important;
+  padding-right: 1.25rem !important;
 }
 
 /* Increase padding inside stat sheets to roughly 140 px */
@@ -24,6 +29,15 @@
     display: none !important;
   }
   .stat-content {
+    /* On small screens, remove the parchment panel entirely and present
+       text directly on the animated background. */
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
     padding: 0.625rem !important;
+    /* Expand the content to fill the available width and remove auto margins
+       inherited from the base mobile styles so text sits directly on the GIF */
+    width: 100% !important;
+    margin: 0 !important;
   }
 }
