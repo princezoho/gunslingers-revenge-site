@@ -497,7 +497,27 @@ main > article p {
     padding: 8.75rem !important;
 }
 
+/* Override to shift stat sheet image to the right by 5px and stack blog posts */
+.stat-sheet-image {
+    margin-left: 5px !important;
+}
+
+.posts {
+    grid-template-columns: 1fr !important;
+}
+
 /* Blog preview card styling */
+/* Mobile overrides: hide parchment and reduce padding to 10px */
+@media (max-width: 600px) {
+    .stat-sheet-image {
+        display: none !important;
+    }
+    .stat-content {
+        padding: 0.625rem !important;
+    }
+
+
+
 .post {
     background-color: #f9efe3;
     padding: 1.5rem;
