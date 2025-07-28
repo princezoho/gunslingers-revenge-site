@@ -19,6 +19,14 @@
 /* Increase padding inside stat sheets to roughly 140 px */
 .stat-content {
   padding: 8.75rem !important;
+  /* Ensure text uses the standard dark color defined by the original design */
+  color: #111111 !important;
+}
+
+/* Override text color within stat sheet headings and paragraphs */
+.stat-content h2,
+.stat-content p {
+  color: #111111 !important;
 }
 
 /* Mobile overrides: hide the parchment on smaller screens and reduce
@@ -39,5 +47,7 @@
        inherited from the base mobile styles so text sits directly on the GIF */
     width: 100% !important;
     margin: 0 !important;
+    /* Maintain dark text color on mobile so it remains legible over the GIF */
+    color: #111111 !important;
   }
 }
