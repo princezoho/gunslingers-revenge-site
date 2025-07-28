@@ -1,8 +1,9 @@
 /* Custom overrides to adjust layout */
 
-/* Shift parchment image slightly to the right */
+/* Shift parchment image slightly to the left compared to the default right‑shift.
+   Setting margin-left to 0px removes the previous positive offset and recenters the image. */
 .stat-sheet-image {
-  margin-left: 5px !important;
+  margin-left: 0px !important;
 }
 
 /* Force blog posts to stack vertically on all screen sizes */
@@ -13,4 +14,16 @@
 /* Increase padding inside stat sheets to roughly 140 px */
 .stat-content {
   padding: 8.75rem !important;
+}
+
+/* Mobile overrides: hide the parchment on smaller screens and reduce
+   the stat-sheet padding to approximately 10px. The breakpoint of
+   768px accommodates most tablet and mobile widths. */
+@media (max-width: 768px) {
+  .stat-sheet-image {
+    display: none !important;
+  }
+  .stat-content {
+    padding: 0.625rem !important;
+  }
 }
