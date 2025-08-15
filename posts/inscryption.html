@@ -27,7 +27,34 @@
             <p>As the story unfolds you’ll step away from the table to search the cabin for clues, solve escape‑room style puzzles and uncover tapes that hint at a meta‑plot stretching beyond the confines of the game. Later acts dramatically shift the art style and mechanics, turning what began as a simple card game into something far more ambitious. This constant reinvention is why Inscryption has become one of the most talked‑about indie games of recent years.</p>
         </article>
         <a href="../blog.html" class="btn secondary" style="margin-top: 2rem; display: inline-block;">Back to Blog</a>
-    </main>
+    
+    <!-- Newsletter CTA for Blog Posts -->
+    <section class="newsletter-section" style="margin-top: 3rem;">
+        <h2>Want More Deck-Building Tips?</h2>
+        <p>Join our newsletter for exclusive strategy guides and development updates!</p>
+        <form class="newsletter-form" action="#" method="POST" onsubmit="subscribeFromBlog(event)">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit" class="btn">Subscribe</button>
+        </form>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">Already subscribed? <a href="https://store.steampowered.com/app/XXXXX/Gunslingers_Revenge/" target="_blank" style="color: #c87f2f; font-weight: bold;">Add to Steam Wishlist →</a></p>
+    </section>
+
+    <script>
+        function subscribeFromBlog(event) {
+            event.preventDefault();
+            const email = event.target.querySelector('input[type="email"]').value;
+            console.log('Blog newsletter subscription:', email);
+            alert('Thank you for subscribing! Check your email for confirmation.');
+            // After newsletter signup from blog, encourage Steam wishlist
+            setTimeout(() => {
+                if (confirm('Great! Now add Gunslinger\'s Revenge to your Steam wishlist to be notified when we launch!')) {
+                    window.open('https://store.steampowered.com/app/XXXXX/Gunslingers_Revenge/', '_blank');
+                }
+            }, 1000);
+        }
+    </script>
+
+</main>
     <footer class="footer">
         <p>&copy; 2025 Gunslinger&#39;s Revenge. All rights reserved.</p>
     </footer>

@@ -52,7 +52,15 @@ build your deck and fight your way through Slingfield." />
         <div class="hero-overlay">
             <h1 class="hero-title">Gunslinger's Revenge</h1>
             <p class="hero-subtitle">A roguelike deck‑building adventure in the Wild West</p>
-            <a href="#game" class="btn">Learn More</a>
+            <div class="hero-cta">
+                <a href="https://store.steampowered.com/app/XXXXX/Gunslingers_Revenge/" target="_blank" class="btn btn-steam">
+                    <svg class="btn-steam-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12c0 5.52 4.48 10 10 10s10-4.48 10-10c0-5.52-4.48-10-10-10zm-1 17.93c-1.73-.43-3.01-1.99-3.01-3.86 0-.34.05-.67.13-.98l2.03.82c.18-.09.38-.14.59-.14.06 0 .12 0 .18.01l1.37-1.98v-.03c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2h-.05l-1.95 1.39c0 .05.01.1.01.15 0 .83-.51 1.54-1.23 1.84l.93.37c1.5-.59 2.57-2.05 2.57-3.76 0-.28-.03-.55-.08-.81l2.42-.98c.45.88.7 1.87.7 2.93 0 3.73-3.03 6.76-6.76 6.76-3.15 0-5.79-2.16-6.53-5.08l1.68.68z"/>
+                    </svg>
+                    Wishlist on Steam
+                </a>
+                <a href="#newsletter" class="btn btn-secondary">Get Updates</a>
+            </div>
         </div>
     </header>
 
@@ -112,6 +120,44 @@ build your deck and fight your way through Slingfield." />
         <a href="blog.html" class="btn secondary">View All Posts</a>
     </section>
 
+    <!-- Steam Wishlist CTA Section -->
+    <section class="steam-cta">
+        <h2>Ready to Draw Your Deck?</h2>
+        <p>Add Gunslinger's Revenge to your Steam wishlist and be the first to know when we launch!</p>
+        <a href="https://store.steampowered.com/app/XXXXX/Gunslingers_Revenge/" target="_blank" class="btn-steam">
+            <svg class="btn-steam-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12c0 5.52 4.48 10 10 10s10-4.48 10-10c0-5.52-4.48-10-10-10zm-1 17.93c-1.73-.43-3.01-1.99-3.01-3.86 0-.34.05-.67.13-.98l2.03.82c.18-.09.38-.14.59-.14.06 0 .12 0 .18.01l1.37-1.98v-.03c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2h-.05l-1.95 1.39c0 .05.01.1.01.15 0 .83-.51 1.54-1.23 1.84l.93.37c1.5-.59 2.57-2.05 2.57-3.76 0-.28-.03-.55-.08-.81l2.42-.98c.45.88.7 1.87.7 2.93 0 3.73-3.03 6.76-6.76 6.76-3.15 0-5.79-2.16-6.53-5.08l1.68.68z"/>
+            </svg>
+            Add to Steam Wishlist
+        </a>
+    </section>
+
+    <!-- Floating CTA Button -->
+    <div class="floating-cta">
+        <a href="https://store.steampowered.com/app/XXXXX/Gunslingers_Revenge/" target="_blank" class="btn-steam">
+            Wishlist Now
+        </a>
+    </div>
+
+    <!-- Newsletter Popup -->
+    <div id="newsletter-popup" class="newsletter-popup">
+        <div class="newsletter-content">
+            <button class="newsletter-close" onclick="closeNewsletterPopup()">&times;</button>
+            <h3>Join the Gunslinger's Guild</h3>
+            <p>Get exclusive updates, strategy tips, and early access opportunities!</p>
+            <ul class="newsletter-benefits">
+                <li>Early access to beta testing</li>
+                <li>Exclusive card reveals</li>
+                <li>Developer insights & behind-the-scenes</li>
+                <li>Special launch discounts</li>
+            </ul>
+            <form class="newsletter-form-popup" onsubmit="subscribeNewsletter(event)">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Join Now</button>
+            </form>
+        </div>
+    </div>
+
     <footer class="footer">
         <p>&copy; 2025 Gunslinger's Revenge. All rights reserved.</p>
         <p>Follow us on social media: 
@@ -120,5 +166,50 @@ build your deck and fight your way through Slingfield." />
             <span class="social">GitHub</span>
         </p>
     </footer>
+    <script>
+        // Newsletter popup logic
+        function showNewsletterPopup() {
+            const popup = document.getElementById('newsletter-popup');
+            if (popup && !localStorage.getItem('newsletterDismissed')) {
+                setTimeout(() => {
+                    popup.classList.add('active');
+                }, 30000); // Show after 30 seconds
+            }
+        }
+
+        function closeNewsletterPopup() {
+            const popup = document.getElementById('newsletter-popup');
+            popup.classList.remove('active');
+            localStorage.setItem('newsletterDismissed', 'true');
+        }
+
+        function subscribeNewsletter(event) {
+            event.preventDefault();
+            const email = event.target.querySelector('input[type="email"]').value;
+            // Here you would integrate with your email service
+            console.log('Newsletter subscription:', email);
+            alert('Thank you for subscribing! Check your email for confirmation.');
+            closeNewsletterPopup();
+            // After newsletter signup, encourage Steam wishlist
+            setTimeout(() => {
+                if (confirm('While you wait for updates, would you like to add Gunslinger\'s Revenge to your Steam wishlist?')) {
+                    window.open('https://store.steampowered.com/app/XXXXX/Gunslingers_Revenge/', '_blank');
+                }
+            }, 1000);
+        }
+
+        // Exit intent detection
+        document.addEventListener('mouseout', function(e) {
+            if (e.clientY <= 0 && !localStorage.getItem('newsletterDismissed')) {
+                const popup = document.getElementById('newsletter-popup');
+                if (popup && !popup.classList.contains('active')) {
+                    popup.classList.add('active');
+                }
+            }
+        });
+
+        // Initialize on page load
+        window.addEventListener('load', showNewsletterPopup);
+    </script>
 </body>
 </html>

@@ -24,7 +24,34 @@
             <p>By handling shuffling, scoring and card effects automatically, the app lets you focus on strategy. The interface is clean and intuitive, and cross‑platform play means you can pick up a game on mobile and continue on PC. For fans of quick yet deep deck‑building battles, <em>Star Realms Digital</em> is an excellent way to scratch the cosmic card‑game itch.</p>
         </article>
         <a href="../blog.html" class="btn secondary" style="margin-top: 2rem; display: inline-block;">Back to Blog</a>
-    </main>
+    
+    <!-- Newsletter CTA for Blog Posts -->
+    <section class="newsletter-section" style="margin-top: 3rem;">
+        <h2>Want More Deck-Building Tips?</h2>
+        <p>Join our newsletter for exclusive strategy guides and development updates!</p>
+        <form class="newsletter-form" action="#" method="POST" onsubmit="subscribeFromBlog(event)">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit" class="btn">Subscribe</button>
+        </form>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">Already subscribed? <a href="https://store.steampowered.com/app/XXXXX/Gunslingers_Revenge/" target="_blank" style="color: #c87f2f; font-weight: bold;">Add to Steam Wishlist →</a></p>
+    </section>
+
+    <script>
+        function subscribeFromBlog(event) {
+            event.preventDefault();
+            const email = event.target.querySelector('input[type="email"]').value;
+            console.log('Blog newsletter subscription:', email);
+            alert('Thank you for subscribing! Check your email for confirmation.');
+            // After newsletter signup from blog, encourage Steam wishlist
+            setTimeout(() => {
+                if (confirm('Great! Now add Gunslinger\'s Revenge to your Steam wishlist to be notified when we launch!')) {
+                    window.open('https://store.steampowered.com/app/XXXXX/Gunslingers_Revenge/', '_blank');
+                }
+            }, 1000);
+        }
+    </script>
+
+</main>
     <footer class="footer">
         <p>&copy; 2025 Gunslinger&#39;s Revenge. All rights reserved.</p>
     </footer>
