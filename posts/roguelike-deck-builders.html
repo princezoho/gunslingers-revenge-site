@@ -44,7 +44,7 @@
             <input type="email" placeholder="Enter your email" required>
             <button type="submit" class="btn">Subscribe</button>
         </form>
-        <p style="margin-top: 1rem; font-size: 0.9rem;">Already subscribed? <a href="https://store.steampowered.com/app/XXXXX/Gunslingers_Revenge/" target="_blank" style="color: #c87f2f; font-weight: bold;">Add to Steam Wishlist →</a></p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">Already subscribed? <a href="#" onclick="showComingSoonPopup(); return false;" style="color: #c87f2f; font-weight: bold;">Add to Steam Wishlist →</a></p>
     </section>
 
     <script>
@@ -56,7 +56,7 @@
             // After newsletter signup from blog, encourage Steam wishlist
             setTimeout(() => {
                 if (confirm('Great! Now add Gunslinger\'s Revenge to your Steam wishlist to be notified when we launch!')) {
-                    window.open('https://store.steampowered.com/app/XXXXX/Gunslingers_Revenge/', '_blank');
+                    showComingSoonPopup();
                 }
             }, 1000);
         }

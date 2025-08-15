@@ -129,5 +129,33 @@
             <span class="social">GitHub</span>
         </p>
     </footer>
+
+    <script>
+        function showComingSoonPopup() {
+            // Show the newsletter popup with coming soon message
+            const popup = document.getElementById('newsletter-popup');
+            if (popup) {
+                popup.classList.add('active');
+                // Update the title to mention Steam coming soon
+                const title = popup.querySelector('h3');
+                if (title) {
+                    title.textContent = 'Steam Launch Coming Soon!';
+                }
+                const subtitle = popup.querySelector('p');
+                if (subtitle) {
+                    subtitle.textContent = 'Be the first to know when Gunslinger\'s Revenge launches on Steam. Join our newsletter for exclusive early access!';
+                }
+            } else {
+                // Fallback alert if popup not found
+                alert('Steam launch coming soon! Join our newsletter to be notified when we go live.');
+                // Try to focus newsletter form if it exists
+                const emailInput = document.querySelector('input[type="email"]');
+                if (emailInput) {
+                    emailInput.focus();
+                }
+            }
+        }
+    </script>
+
 </body>
 </html>
