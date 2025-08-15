@@ -53,7 +53,7 @@ a:hover {
 /* Use one of the authentic Gunslingers NFT images as the hero background to better match the original site aesthetic. */
 .hero {
     /* Use an animated Gunslingers scene as the hero background. */
-    background-image: url('assets/shotgun.gif');
+    background-image: url('assets/shotgun-blast-animation.gif');
     background-size: cover;
     background-position: center;
     height: 80vh;
@@ -333,7 +333,7 @@ section {
 
 /* Assign unique GIF backgrounds to each SFX section variant */
 .sfx-section.vfx {
-    background-image: url('assets/vfx.gif');
+    background-image: url('assets/visual-effects-animation.gif');
     /* Scale the GIF to 200% width like other backgrounds and crop vertically */
     background-size: 200% 100%;
     background-repeat: no-repeat;
@@ -341,7 +341,7 @@ section {
 }
 
 .sfx-section.sfx17 {
-    background-image: url('assets/sfx17.gif');
+    background-image: url('assets/special-effect-green-animation.gif');
     /* Scale the GIF to 200% width and crop vertically so the section height
        remains moderate. */
     background-size: 200% 100%;
@@ -352,7 +352,7 @@ section {
 .sfx-section.sfx26 {
     /* Reintroduce an animated GIF for the cream‑colored middle section. Scale it to 200% width
        and crop vertically so the section height remains reasonable. */
-    background-image: url('assets/sfx26.gif');
+    background-image: url('assets/special-effect-tan-animation.gif');
     background-color: #f5e9dc;
     background-size: 200% 100%;
     background-repeat: no-repeat;
@@ -530,4 +530,353 @@ main > article p {
 }
 .post p {
     color: #5a4633;
+}
+
+/* Navigation menu */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin-left: auto;
+    align-items: center;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: #f5e9dc;
+    font-family: 'Wanted', sans-serif;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #c87f2f;
+    text-decoration: none;
+}
+
+.site-nav {
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+
+/* Container for centered content */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Features page styles */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.feature-card {
+    background: #f9efe3;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+
+.feature-card h3 {
+    color: #3b1d0b;
+    margin-bottom: 1rem;
+}
+
+.feature-card p {
+    color: #5a4633;
+    line-height: 1.6;
+}
+
+.features-list {
+    background: #f9efe3;
+    padding: 3rem;
+    border-radius: 8px;
+    margin: 3rem 0;
+}
+
+.features-list h2 {
+    color: #3b1d0b;
+    margin-bottom: 2rem;
+}
+
+.feature-bullets {
+    list-style: none;
+    padding: 0;
+}
+
+.feature-bullets li {
+    padding: 0.75rem 0;
+    padding-left: 2rem;
+    position: relative;
+    color: #5a4633;
+    border-bottom: 1px solid #e6d7c3;
+}
+
+.feature-bullets li:last-child {
+    border-bottom: none;
+}
+
+.feature-bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: #c87f2f;
+    font-size: 1.2rem;
+}
+
+/* Gallery page styles */
+.gallery-section {
+    margin: 3rem 0;
+}
+
+.gallery-section h2 {
+    color: #f5e9dc;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.gallery-item {
+    background: #1a1a1a;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.gallery-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gallery-caption {
+    padding: 1rem;
+    color: #f5e9dc;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* Contact page styles */
+.contact-section {
+    margin: 3rem 0;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.contact-form {
+    background: #f9efe3;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    color: #3b1d0b;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d4c3af;
+    border-radius: 4px;
+    font-family: 'Wanted', sans-serif;
+    font-size: 1rem;
+    background: white;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.contact-info {
+    color: #f5e9dc;
+}
+
+.contact-info h2 {
+    margin-bottom: 2rem;
+}
+
+.contact-item {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #3a3a3a;
+}
+
+.contact-item:last-child {
+    border-bottom: none;
+}
+
+.contact-item h3 {
+    color: #c87f2f;
+    margin-bottom: 0.5rem;
+}
+
+.social-links {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.social-links li {
+    margin-bottom: 0.5rem;
+}
+
+.social-links a {
+    color: #f5e9dc;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #c87f2f;
+}
+
+/* FAQ section */
+.faq-section {
+    background: #1a1a1a;
+    padding: 3rem;
+    border-radius: 8px;
+    margin: 3rem 0;
+}
+
+.faq-section h2 {
+    color: #f5e9dc;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.faq-item {
+    background: #2a2a2a;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.faq-item h3 {
+    color: #c87f2f;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.faq-item p {
+    color: #f5e9dc;
+    line-height: 1.6;
+}
+
+/* Newsletter section */
+.newsletter-section {
+    background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
+    padding: 3rem;
+    border-radius: 8px;
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.newsletter-section h2 {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.newsletter-section p {
+    color: white;
+    margin-bottom: 2rem;
+}
+
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Wanted', sans-serif;
+}
+
+.newsletter-form button {
+    padding: 0.75rem 2rem;
+}
+
+/* CTA section */
+.cta-section {
+    text-align: center;
+    padding: 3rem;
+    background: #f9efe3;
+    border-radius: 8px;
+    margin: 3rem 0;
+}
+
+.cta-section h2 {
+    color: #3b1d0b;
+    margin-bottom: 1rem;
+}
+
+.cta-section p {
+    color: #5a4633;
+    margin-bottom: 2rem;
+}
+
+/* Mobile menu toggle */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
 }
