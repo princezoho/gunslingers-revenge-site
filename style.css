@@ -492,9 +492,9 @@ main > article p {
     margin-left: -40px;
 }
 
-/* Increase padding inside the stat sheets */
+/* Adjusted padding to fit text within parchment */
 .stat-content {
-    padding: 8.75rem !important;
+    padding: 3rem 4rem !important;
 }
 
 /* Override to shift stat sheet image to the right by 5px and stack blog posts */
