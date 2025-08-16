@@ -81,6 +81,12 @@ a:hover {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
 }
 
+.hero-logo-title {
+    display: block;
+    margin: 0 auto 1rem auto;
+    filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.7));
+}
+
 .hero-subtitle {
     font-size: 1.1rem;
     margin-bottom: 1.5rem;
