@@ -1,0 +1,191 @@
+/* Full-screen background styles for Gunslinger's Revenge */
+
+/* Full backgrounds with no overlays */
+.full-bg-section {
+    position: relative;
+    min-height: 700px;
+    padding: 5rem 2rem;
+    overflow: hidden;
+}
+
+/* Graveyard background - fills entire section */
+.bg-graveyard {
+    background: url('assets/gunslingers-revenge-test-bgs copy.gif') center/cover no-repeat;
+    background-color: #4a5c5a; /* Teal/purple graveyard tone */
+    background-attachment: fixed;
+}
+
+/* Night menu background - fills entire section */
+.bg-night {
+    background: url('assets/gunslingers-revenge-next-night-bg-menu.gif') center/cover no-repeat;
+    background-color: #1a2332; /* Dark blue night sky */
+    background-attachment: fixed;
+}
+
+/* Character sections with side positioning */
+.character-bg-section {
+    position: relative;
+    min-height: 600px;
+    padding: 4rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Left-side character */
+.char-left {
+    background-position: 10% center;
+    background-size: auto 80%;
+    background-repeat: no-repeat;
+}
+
+/* Right-side character */
+.char-right {
+    background-position: 90% center;
+    background-size: auto 80%;
+    background-repeat: no-repeat;
+}
+
+/* Content container centered in the section */
+.content-side {
+    max-width: 50%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-side.left {
+    margin: 0 auto;
+}
+
+/* Specific character backgrounds with matching colors from actual GIFs */
+.bg-char-gunslinger {
+    background-image: url('assets/gunslingers-revenge-char-02-idel.gif');
+    background-color: #366657; /* Green like the screenshot */
+}
+
+.bg-char-attack {
+    background-image: url('assets/gunslingers-revenge-char-08-attack.gif');
+    background-color: #366657; /* Green background */
+}
+
+.bg-char-skeleton {
+    background-image: url('assets/gunslingers-revenge-skelly.gif');
+    background-color: #4a5c5a; /* Graveyard teal */
+}
+
+.bg-char-ghost {
+    background-image: url('assets/gunslingers-revenge-ghost-coyote.gif');
+    background-color: #4a5c5a; /* Graveyard teal */
+}
+
+.bg-char-special {
+    background-image: url('assets/gunslingers-revenge-char-14-attack.gif');
+    background-color: #366657; /* Green */
+}
+
+.bg-char-dual {
+    background-image: url('assets/gunslingers-revenge-char-21-attack2.gif');
+    background-color: #366657; /* Green */
+}
+
+/* Special effects backgrounds */
+.bg-sfx-green {
+    background: url('assets/sfx17.gif') center/cover no-repeat;
+    background-color: #366657; /* Green to match the effect */
+}
+
+.bg-sfx-tan {
+    background: url('assets/sfx26.gif') center/cover no-repeat;
+    background-color: #8b7355; /* Tan/brown desert tone */
+}
+
+/* Ensure stat sheets are readable and properly sized */
+.stat-sheet {
+    position: relative;
+    z-index: 10;
+    max-width: 750px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Override stat-content padding for character sections */
+.character-bg-section .stat-content,
+.full-bg-section .stat-content {
+    padding: 4rem 5rem !important;
+    max-height: none;
+    overflow: visible;
+}
+
+/* Normal sized text for readability */
+.character-bg-section .stat-content h2,
+.full-bg-section .stat-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+
+.character-bg-section .stat-content p,
+.full-bg-section .stat-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+}
+
+.character-bg-section .stat-content ul,
+.full-bg-section .stat-content ul {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0.75rem 0;
+    padding-left: 1.5rem;
+}
+
+.character-bg-section .stat-content li,
+.full-bg-section .stat-content li {
+    margin-bottom: 0.5rem;
+}
+
+/* Hide scrollbar but keep functionality */
+.character-bg-section .stat-content::-webkit-scrollbar,
+.full-bg-section .stat-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.character-bg-section .stat-content::-webkit-scrollbar-track,
+.full-bg-section .stat-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.character-bg-section .stat-content::-webkit-scrollbar-thumb,
+.full-bg-section .stat-content::-webkit-scrollbar-thumb {
+    background: rgba(53, 35, 21, 0.3);
+    border-radius: 3px;
+}
+
+/* Dark overlay for text readability when needed */
+.content-overlay {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 2rem;
+    border-radius: 12px;
+    backdrop-filter: blur(5px);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .character-bg-section {
+        background-size: auto 50%;
+        background-position: top center;
+        padding-top: 15rem;
+    }
+    
+    .content-side {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    
+    .full-bg-section {
+        background-attachment: scroll;
+    }
+}

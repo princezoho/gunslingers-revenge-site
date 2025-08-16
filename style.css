@@ -56,7 +56,8 @@ a:hover {
     background-image: url('assets/shotgun-blast-animation.gif');
     background-size: cover;
     background-position: center;
-    height: 80vh;
+    height: 50vh;
+    min-height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -67,13 +68,13 @@ a:hover {
 
 .hero-overlay {
     /* Remove semi‑opaque panels; instead rely on text shadows for contrast */
-    padding: 2rem;
+    padding: 1rem;
     border-radius: 8px;
 }
 
 .hero-title {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
     color: #fff;
     /* Use the Wanted font for the main title */
     font-family: 'Wanted', sans-serif;
@@ -81,8 +82,8 @@ a:hover {
 }
 
 .hero-subtitle {
-    font-size: 1.3rem;
-    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
     color: #fff;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
     font-family: 'Wanted', sans-serif;
@@ -258,6 +259,12 @@ section {
     }
 }
 
+/* Game showcase section */
+.game-showcase {
+    background-color: #1a2332; /* Dark blue to match night theme */
+    padding: 3rem 0;
+}
+
 /* Blog preview */
 .posts {
     display: grid;
@@ -289,8 +296,8 @@ section {
 
 /* Footer */
 .footer {
-    background-color: #f4e6d4;
-    color: #5a4633;
+    background-color: #1a2332; /* Dark blue to match night theme */
+    color: #f5e9dc;
     padding: 1.5rem 1rem;
     text-align: center;
 }
@@ -305,6 +312,7 @@ section {
     max-width: 960px;
     margin: 0 auto;
     padding: 2rem 1rem;
+    background-color: #2d4a3d; /* Dark green to match hero */
 }
 
 /* SFX section used for dynamic backgrounds. Fills the width of the page and uses an animated GIF as a backdrop. */
@@ -323,7 +331,7 @@ section {
     /* No margin so sections butt up seamlessly */
     margin: 0;
     /* Set a minimum height so the GIF backgrounds occupy more vertical space */
-    min-height: 100vh;
+    min-height: 90vh;
 }
 
 /* Ensure consecutive SFX sections do not create a gap between them */
@@ -342,6 +350,7 @@ section {
 
 .sfx-section.sfx17 {
     background-image: url('assets/special-effect-green-animation.gif');
+    background-color: #366657;
     /* Scale the GIF to 200% width and crop vertically so the section height
        remains moderate. */
     background-size: 200% 100%;
@@ -353,7 +362,7 @@ section {
     /* Reintroduce an animated GIF for the cream‑colored middle section. Scale it to 200% width
        and crop vertically so the section height remains reasonable. */
     background-image: url('assets/special-effect-tan-animation.gif');
-    background-color: #f5e9dc;
+    background-color: #366657;
     background-size: 200% 100%;
     background-repeat: no-repeat;
     /* Reduce the minimum height for the middle section so it isn’t as tall as the others */
@@ -365,8 +374,8 @@ section {
 .stat-sheet {
     position: relative;
     /* Allow the stat sheet to grow a bit wider on larger screens */
-    max-width: 1100px;
-    width: 98%;
+    max-width: 750px;
+    width: 90%;
     margin: 0 auto;
 }
 

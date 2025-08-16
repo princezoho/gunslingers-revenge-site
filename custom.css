@@ -16,17 +16,57 @@
   padding-right: 1.25rem !important;
 }
 
-/* Increase padding inside stat sheets to roughly 140 px */
+/* Set proper padding for stat sheet content to match the image */
 .stat-content {
-  padding: 8.75rem !important;
+  padding: 3rem 4rem !important;
   /* Ensure text uses the standard dark color defined by the original design */
   color: #111111 !important;
+  text-align: center !important;
+}
+
+/* Adjust padding for larger parchment on homepage - reduced gutters */
+.sfx-section .stat-content {
+  padding: 4rem 5rem !important;
+  width: 65% !important;
 }
 
 /* Override text color within stat sheet headings and paragraphs */
 .stat-content h2,
 .stat-content p {
   color: #111111 !important;
+}
+
+/* Homepage specific stat sheet styling to match the image */
+.sfx-section .stat-sheet {
+  min-width: 900px !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+}
+
+/* Make the parchment image 20% larger for homepage sections */
+.sfx-section .stat-sheet-image {
+  transform: scale(1.2) translateX(-2%);
+  transform-origin: center center;
+}
+
+.sfx-section .stat-content h2 {
+  font-size: 3.8rem !important;
+  font-weight: bold !important;
+  margin-bottom: 2rem !important;
+  font-family: 'Wanted', serif !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  line-height: 1.1 !important;
+}
+
+.sfx-section .stat-content p {
+  font-size: 1.4rem !important;
+  line-height: 1.4 !important;
+  margin-bottom: 1.5rem !important;
+  text-align: center !important;
+  text-transform: uppercase !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.03em !important;
 }
 
 /* Mobile overrides: hide the parchment on smaller screens and reduce
