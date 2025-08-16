@@ -1,0 +1,12 @@
+{
+  "outputDirectory": ".",
+  "public": true,
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/posts/:path*",
+      "destination": "/posts/:path*"
+    }
+  ]
+}
