@@ -60,16 +60,18 @@ a:hover {
     min-height: 400px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     position: relative;
     color: #fff;
-    text-align: center;
+    padding-left: 5%;
 }
 
 .hero-overlay {
     /* Remove semi‑opaque panels; instead rely on text shadows for contrast */
     padding: 1rem;
     border-radius: 8px;
+    text-align: left;
+    max-width: 600px;
 }
 
 .hero-title {
@@ -83,7 +85,7 @@ a:hover {
 
 .hero-logo-title {
     display: block;
-    margin: 0 auto 1rem auto;
+    margin: 0 0 1rem 0;
     filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.7));
 }
 
@@ -297,6 +299,9 @@ section {
     }
     .hero-subtitle {
         font-size: 1.5rem;
+    }
+    .hero {
+        padding-left: 8%;
     }
 }
 
@@ -1111,7 +1116,7 @@ main > article p {
     gap: 1rem;
     margin-top: 2rem;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .btn-secondary {
