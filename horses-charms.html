@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horses & Charms System - Gunslinger's Revenge</title>
+    <meta name="description" content="Customize your loadout with unique horses and powerful charms in Gunslinger's Revenge. Build game-breaking combinations and forge your own playstyle.">
+    <link rel="stylesheet" href="style.css?v=4">
+    <link rel="stylesheet" href="custom.css?v=5">
+    <link rel="stylesheet" href="nav-dropdown.css?v=1">
+    <link rel="stylesheet" href="backgrounds.css?v=2">
+    <meta name="keywords" content="gunslinger's revenge, horses, charms, upgrades, customization, roguelike deck builder">
+    <style>
+        /* Page-specific styles for horses & charms */
+        .horses-hero {
+            background: url('assets/uncompressed/layout-t.png') center/cover no-repeat;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 2rem;
+        }
+        
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 3rem;
+            border-radius: 15px;
+            max-width: 800px;
+        }
+        
+        .hero-content h1 {
+            font-size: 4rem;
+            color: #FFD700;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+            margin-bottom: 1rem;
+            font-family: 'Wanted', sans-serif;
+        }
+        
+        .hero-content p {
+            font-size: 1.5rem;
+            color: #f5e9dc;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+        
+        .cta-group {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .charms-showcase {
+            background: url('assets/uncompressed/charms-page.png') center/cover no-repeat;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 4rem 2rem;
+        }
+        
+        .showcase-content {
+            position: relative;
+            max-width: 1000px;
+            width: 100%;
+        }
+        
+        .showcase-parchment {
+            position: relative;
+        }
+        
+        .showcase-parchment img {
+            width: 100%;
+            transform: scale(1.5);
+        }
+        
+        .showcase-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 60%;
+            color: #2a1810;
+        }
+        
+        .showcase-text h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #1a0f08;
+            font-family: 'Wanted', sans-serif;
+        }
+        
+        .showcase-text p {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .charm-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+            padding: 2rem;
+            background: rgba(245, 233, 220, 0.9);
+            border-radius: 10px;
+        }
+        
+        .charm-item {
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .charm-item:hover {
+            transform: scale(1.1);
+        }
+        
+        .charm-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+        }
+        
+        .horse-trading {
+            background: url('assets/uncompressed/horse-trading-edit.png') center/cover no-repeat;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
+            position: relative;
+        }
+        
+        .trading-overlay {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 3rem;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 900px;
+        }
+        
+        .trading-overlay h2 {
+            font-size: 3.5rem;
+            color: #FFD700;
+            margin-bottom: 1.5rem;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+        }
+        
+        .trading-overlay p {
+            font-size: 1.4rem;
+            color: #f5e9dc;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .feature-card {
+            background: rgba(200, 127, 47, 0.9);
+            padding: 2rem;
+            border-radius: 10px;
+            border: 3px solid #000;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-card h3 {
+            color: #fff;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card p {
+            color: #f5e9dc;
+            font-size: 1.1rem;
+        }
+        
+        /* Parallax effect */
+        .parallax-section {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .combination-section {
+            background: linear-gradient(135deg, #2d4a3d 0%, #1a2332 100%);
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+        
+        .combination-section h2 {
+            font-size: 3rem;
+            color: #FFD700;
+            margin-bottom: 2rem;
+        }
+        
+        .combo-showcase {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin: 3rem 0;
+        }
+        
+        .combo-item {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 2rem;
+            border-radius: 10px;
+            border: 2px solid #FFD700;
+        }
+        
+        .combo-item h3 {
+            color: #FFD700;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .combo-item p {
+            color: #f5e9dc;
+            font-size: 1.1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .showcase-text h2 {
+                font-size: 2rem;
+            }
+            
+            .showcase-text {
+                width: 80%;
+            }
+            
+            .trading-overlay h2 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="site-nav">
+        <img src="assets/gunslingers-revenge-logo.png" alt="Gunslinger's Revenge logo" class="logo">
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="nav-dropdown">
+                <button class="nav-dropdown-toggle">Game Info</button>
+                <div class="nav-dropdown-menu">
+                    <a href="gameplay.html">Gameplay</a>
+                    <a href="characters.html">Characters</a>
+                    <a href="cards.html">Cards & Rarities</a>
+                    <a href="horses-charms.html">Horses & Charms</a>
+                    <a href="tonics.html">Tonics & Crafting</a>
+                    <a href="features.html">Features</a>
+                    <a href="gallery.html">Gallery</a>
+                </div>
+            </li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="https://subscribepage.io/U500SL" target="__blank" class="btn btn-primary">Newsletter</a></li>
+            <li><a href="https://subscribepage.io/U500SL" target="_blank" class="btn btn-nav-steam">Wishlist</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section with Inventory Background -->
+    <section class="horses-hero parallax-section">
+        <div class="hero-content">
+            <h1>Build Your Ultimate Loadout</h1>
+            <p>Customize horses, collect charms, forge your legend</p>
+            <div class="cta-group">
+                <a href="https://subscribepage.io/U500SL" target="_blank" class="btn btn-primary">Get Early Access</a>
+                <a href="https://subscribepage.io/U500SL" target="_blank" class="btn btn-steam">
+                    <svg class="btn-steam-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12c0 5.52 4.48 10 10 10s10-4.48 10-10c0-5.52-4.48-10-10-10zm-1 17.93c-1.73-.43-3.01-1.99-3.01-3.86 0-.34.05-.67.13-.98l2.03.82c.18-.09.38-.14.59-.14.06 0 .12 0 .18.01l1.37-1.98v-.03c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2h-.05l-1.95 1.39c0 .05.01.1.01.15 0 .83-.51 1.54-1.23 1.84l.93.37c1.5-.59 2.57-2.05 2.57-3.76 0-.28-.03-.55-.08-.81l2.42-.98c.45.88.7 1.87.7 2.93 0 3.73-3.03 6.76-6.76 6.76-3.15 0-5.79-2.16-6.53-5.08l1.68.68z"/>
+                    </svg>
+                    Add to Wishlist
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Charms Showcase Section -->
+    <section class="charms-showcase">
+        <div class="showcase-content">
+            <div class="showcase-parchment">
+                <img src="assets/character-stat-sheet-parchment.png" alt="Parchment background">
+                <div class="showcase-text">
+                    <h2>Discover Powerful Charms</h2>
+                    <p>Mix and match mystical abilities to create game-breaking combos. Each charm changes how you play, opening endless strategic possibilities.</p>
+                    <p><strong>Collect. Combine. Conquer.</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Horse Trading Section -->
+    <section class="horse-trading parallax-section">
+        <div class="trading-overlay">
+            <h2>Trade & Upgrade Your Steeds</h2>
+            <p>Each horse brings unique abilities to your runs. From swift mustangs to armored warhorses, choose your mount wisely.</p>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>7 Unique Breeds</h3>
+                    <p>Each with special abilities and upgrade paths</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Infinite Customization</h3>
+                    <p>Combine horses with charms for unique builds</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Visual Upgrades</h3>
+                    <p>Watch your horse evolve as you progress</p>
+                </div>
+            </div>
+            
+            <div class="cta-group">
+                <a href="https://subscribepage.io/U500SL" target="_blank" class="btn btn-primary">Join Beta Testing</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Combinations Section -->
+    <section class="combination-section">
+        <h2>Endless Combinations, Endless Fun</h2>
+        <p style="font-size: 1.3rem; color: #f5e9dc; margin-bottom: 3rem;">Every run is unique with our deep customization system</p>
+        
+        <div class="combo-showcase">
+            <div class="combo-item">
+                <h3>Speed Demon Build</h3>
+                <p>Lightning Horse + Quick Draw Charms = Blaze through enemies</p>
+            </div>
+            <div class="combo-item">
+                <h3>Tank Master Build</h3>
+                <p>War Horse + Defense Charms = Unstoppable force</p>
+            </div>
+            <div class="combo-item">
+                <h3>Lucky Gambler Build</h3>
+                <p>Spirit Horse + Fortune Charms = RNG in your favor</p>
+            </div>
+        </div>
+        
+        <div style="margin-top: 4rem;">
+            <h3 style="color: #FFD700; font-size: 2rem; margin-bottom: 2rem;">Your Playstyle, Your Way</h3>
+            <p style="color: #f5e9dc; font-size: 1.2rem; max-width: 800px; margin: 0 auto 3rem;">
+                With hundreds of charm combinations and multiple horse breeds, no two players will have the same experience. 
+                Find your perfect build and dominate the Wild West.
+            </p>
+            <div class="cta-group">
+                <a href="https://subscribepage.io/U500SL" target="_blank" class="btn btn-primary">Get Exclusive Updates</a>
+                <a href="https://subscribepage.io/U500SL" target="_blank" class="btn btn-steam">Wishlist on Steam</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="steam-cta">
+        <h2>Ready to Saddle Up?</h2>
+        <p>Be among the first to experience the deepest customization system in any roguelike deck-builder</p>
+        <a href="https://subscribepage.io/U500SL" target="_blank" class="btn btn-primary">Join Our Posse</a>
+        <a href="https://subscribepage.io/U500SL" target="_blank" class="btn-steam">
+            <svg class="btn-steam-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12c0 5.52 4.48 10 10 10s10-4.48 10-10c0-5.52-4.48-10-10-10zm-1 17.93c-1.73-.43-3.01-1.99-3.01-3.86 0-.34.05-.67.13-.98l2.03.82c.18-.09.38-.14.59-.14.06 0 .12 0 .18.01l1.37-1.98v-.03c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2h-.05l-1.95 1.39c0 .05.01.1.01.15 0 .83-.51 1.54-1.23 1.84l.93.37c1.5-.59 2.57-2.05 2.57-3.76 0-.28-.03-.55-.08-.81l2.42-.98c.45.88.7 1.87.7 2.93 0 3.73-3.03 6.76-6.76 6.76-3.15 0-5.79-2.16-6.53-5.08l1.68.68z"/>
+            </svg>
+            Steam Wishlist
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Gunslinger's Revenge. All rights reserved.</p>
+        <p>Follow us: 
+            <span class="social">Twitter</span> | 
+            <span class="social">Discord</span> | 
+            <span class="social">Steam</span>
+        </p>
+    </footer>
+</body>
+</html>

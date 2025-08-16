@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epic Moments - Gunslinger's Revenge Scenes</title>
+    <meta name="description" content="Experience the Wild West like never before. Every run tells a different story in Gunslinger's Revenge.">
+    <link rel="stylesheet" href="style.css?v=4">
+    <link rel="stylesheet" href="custom.css?v=5">
+    <link rel="stylesheet" href="nav-dropdown.css?v=1">
+    <link rel="stylesheet" href="backgrounds.css?v=2">
+    <meta name="keywords" content="gunslinger's revenge, wild west game, roguelike scenes, gameplay moments">
+    <style>
+        /* Scene-specific styles */
+        .scene-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        /* Hero Scene */
+        .hero-scene {
+            background-image: url('assets/large-scenes/hero-slinger.gif');
+            background-color: #d4c3a0;
+        }
+        
+        /* Town Showdown */
+        .showdown-scene {
+            background-image: url('assets/large-scenes/10.png');
+        }
+        
+        /* Desert Journey */
+        .desert-journey {
+            background-image: url('assets/large-scenes/12.png');
+        }
+        
+        /* Saloon Rest */
+        .saloon-scene {
+            background-image: url('assets/large-scenes/7.png');
+        }
+        
+        /* Action Scene */
+        .action-scene {
+            background-image: url('assets/large-scenes/3.png');
+        }
+        
+        /* Victory Jump */
+        .victory-scene {
+            background-image: url('assets/large-scenes/5.png');
+        }
+        
+        /* Defeat Scene */
+        .defeat-scene {
+            background-image: url('assets/large-scenes/1.png');
+        }
+        
+        /* Boss Hall */
+        .boss-scene {
+            background-image: url('assets/large-scenes/8.png');
+        }
+        
+        /* Sky Scene */
+        .sky-scene {
+            background-image: url('assets/large-scenes/18.png');
+        }
+        
+        /* Celebration */
+        .celebration-scene {
+            background-image: url('assets/large-scenes/15.png');
+        }
+        
+        /* Bar Dancing */
+        .bar-scene {
+            background-image: url('assets/large-scenes/20.png');
+        }
+        
+        /* Floating Scene */
+        .floating-scene {
+            background-image: url('assets/large-scenes/2.png');
+        }
+        
+        .scene-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            padding: 3rem;
+        }
+        
+        .scene-content h2 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            font-family: 'Wanted', sans-serif;
+            color: #FFD700;
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 1), 
+                        -1px -1px 2px rgba(0, 0, 0, 0.9),
+                        1px -1px 2px rgba(0, 0, 0, 0.9),
+                        -1px 1px 2px rgba(0, 0, 0, 0.9),
+                        1px 1px 2px rgba(0, 0, 0, 0.9);
+        }
+        
+        .scene-content p {
+            font-size: 1.8rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            color: #fff;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 1),
+                        -1px -1px 2px rgba(0, 0, 0, 0.9),
+                        1px -1px 2px rgba(0, 0, 0, 0.9),
+                        -1px 1px 2px rgba(0, 0, 0, 0.9),
+                        1px 1px 2px rgba(0, 0, 0, 0.9);
+            font-weight: 600;
+        }
+        
+        .scene-cta {
+            margin-top: 1rem;
+        }
+        
+        .scene-cta .btn {
+            margin: 0 0.5rem;
+        }
+        
+        /* Opening title section */
+        .opening-section {
+            background: url('assets/large-scenes/bg-landing.jpg') center/cover no-repeat;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            background-attachment: fixed;
+        }
+        
+        .opening-content h1 {
+            font-size: 5rem;
+            color: #FFD700;
+            margin-bottom: 2rem;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+            font-family: 'Wanted', sans-serif;
+        }
+        
+        .opening-content p {
+            font-size: 1.8rem;
+            color: #f5e9dc;
+            margin-bottom: 3rem;
+            max-width: 800px;
+        }
+        
+        /* Transition sections */
+        .transition-section {
+            background: #0a0a0a;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        
+        .transition-section h3 {
+            font-size: 2.5rem;
+            color: #FFD700;
+            margin-bottom: 1rem;
+            font-family: 'Wanted', sans-serif;
+        }
+        
+        .transition-section p {
+            font-size: 1.3rem;
+            color: #f5e9dc;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        @media (max-width: 768px) {
+            .scene-content h2 {
+                font-size: 2.5rem;
+            }
+            
+            .scene-content p {
+                font-size: 1.2rem;
+            }
+            
+            .scene-content {
+                padding: 2rem;
+            }
+            
+            .opening-content h1 {
+                font-size: 3rem;
+            }
+            
+            .opening-content p {
+                font-size: 1.3rem;
+            }
+        }
+        
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            color: #FFD700;
+            font-size: 2rem;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="site-nav">
+        <img src="assets/gunslingers-revenge-logo.png" alt="Gunslinger's Revenge logo" class="logo">
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="nav-dropdown">
+                <button class="nav-dropdown-toggle">Game Info</button>
+                <div class="nav-dropdown-menu">
+                    <a href="gameplay.html">Gameplay</a>
+                    <a href="characters.html">Characters</a>
+                    <a href="cards.html">Cards & Rarities</a>
+                    <a href="horses-charms.html">Horses & Charms</a>
+                    <a href="scenes.html">Epic Moments</a>
+                    <a href="tonics.html">Tonics & Crafting</a>
+                    <a href="features.html">Features</a>
+                    <a href="gallery.html">Gallery</a>
+                </div>
+            </li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="https://subscribepage.io/U500SL" target="_blank" class="btn btn-primary">Newsletter</a></li>
+            <li><a href="https://subscribepage.io/U500SL" target="_blank" class="btn btn-nav-steam">Wishlist</a></li>
+        </ul>
+    </nav>
+
+    <!-- Opening Section -->
+    <section class="opening-section">
+        <div class="opening-content">
+            <h1>Every Run Tells a Story</h1>
+            <p>From dusty towns to desert showdowns, experience the full spectrum of Wild West action</p>
+            <div class="scene-cta">
+                <a href="https://subscribepage.io/U500SL" target="_blank" class="btn btn-primary">Get Early Access</a>
+                <a href="https://subscribepage.io/U500SL" target="_blank" class="btn btn-steam">Wishlist on Steam</a>
+            </div>
+            <div class="scroll-indicator">↓</div>
+        </div>
+    </section>
+
+    <!-- Hero Introduction -->
+    <section class="scene-section hero-scene">
+        <div class="scene-content">
+            <h2>Meet Your Gunslinger</h2>
+            <p>Every legend starts somewhere. Customize your hero and forge your path.</p>
+        </div>
+    </section>
+
+    <!-- Town Arrival -->
+    <section class="scene-section showdown-scene">
+        <div class="scene-content">
+            <h2>High Noon Showdowns</h2>
+            <p>Face legendary outlaws in tense duels. Quick thinking and quicker draws win the day.</p>
+        </div>
+    </section>
+
+    <!-- Action Sequence -->
+    <section class="scene-section action-scene">
+        <div class="scene-content">
+            <h2>Non-Stop Action</h2>
+            <p>Chase, dodge, and blast your way through dynamically generated encounters.</p>
+        </div>
+    </section>
+
+    <!-- Transition -->
+    <section class="transition-section">
+        <h3>Your Journey, Your Choices</h3>
+        <p>Every decision matters. Build your deck, choose your path, become a legend.</p>
+    </section>
+
+    <!-- Saloon Strategy -->
+    <section class="scene-section saloon-scene">
+        <div class="scene-content">
+            <h2>Strategic Moments</h2>
+            <p>Rest, upgrade, and plan your next move in mysterious locations.</p>
+        </div>
+    </section>
+
+    <!-- Boss Battle -->
+    <section class="scene-section boss-scene">
+        <div class="scene-content">
+            <h2>Epic Boss Battles</h2>
+            <p>Test your skills against formidable foes in grand arenas.</p>
+        </div>
+    </section>
+
+    <!-- Desert Exploration -->
+    <section class="scene-section desert-journey">
+        <div class="scene-content">
+            <h2>Endless Frontier</h2>
+            <p>Explore procedurally generated deserts. No two runs are the same.</p>
+        </div>
+    </section>
+
+    <!-- Victory -->
+    <section class="scene-section victory-scene">
+        <div class="scene-content">
+            <h2>Sweet Victory</h2>
+            <p>Triumph over impossible odds and claim your rewards.</p>
+            <div class="scene-cta">
+                <a href="https://subscribepage.io/U500SL" target="_blank" class="btn btn-primary">Join the Winners</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Celebration -->
+    <section class="scene-section celebration-scene">
+        <div class="scene-content">
+            <h2>Legendary Status</h2>
+            <p>Become the gunslinger everyone talks about.</p>
+        </div>
+    </section>
+
+    <!-- Bar Scene -->
+    <section class="scene-section bar-scene">
+        <div class="scene-content">
+            <h2>Celebrate in Style</h2>
+            <p>After every successful run, new possibilities unlock.</p>
+        </div>
+    </section>
+
+    <!-- Defeat/Learning -->
+    <section class="scene-section defeat-scene">
+        <div class="scene-content">
+            <h2>Learn and Adapt</h2>
+            <p>Every defeat teaches you. Every run makes you stronger.</p>
+        </div>
+    </section>
+
+    <!-- Sky/Contemplation -->
+    <section class="scene-section sky-scene">
+        <div class="scene-content">
+            <h2>Your Legend Awaits</h2>
+            <p>The Wild West is calling. Will you answer?</p>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="steam-cta" style="padding: 6rem 2rem;">
+        <h2 style="font-size: 3.5rem;">Ready to Write Your Story?</h2>
+        <p style="font-size: 1.5rem; margin-bottom: 3rem;">Join thousands of gunslingers already on the trail</p>
+        <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
+            <a href="https://subscribepage.io/U500SL" target="_blank" class="btn btn-primary" style="font-size: 1.3rem; padding: 1rem 2.5rem;">
+                Get Exclusive Access
+            </a>
+            <a href="https://subscribepage.io/U500SL" target="_blank" class="btn-steam" style="font-size: 1.3rem; padding: 1rem 2.5rem;">
+                <svg class="btn-steam-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12c0 5.52 4.48 10 10 10s10-4.48 10-10c0-5.52-4.48-10-10-10zm-1 17.93c-1.73-.43-3.01-1.99-3.01-3.86 0-.34.05-.67.13-.98l2.03.82c.18-.09.38-.14.59-.14.06 0 .12 0 .18.01l1.37-1.98v-.03c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2h-.05l-1.95 1.39c0 .05.01.1.01.15 0 .83-.51 1.54-1.23 1.84l.93.37c1.5-.59 2.57-2.05 2.57-3.76 0-.28-.03-.55-.08-.81l2.42-.98c.45.88.7 1.87.7 2.93 0 3.73-3.03 6.76-6.76 6.76-3.15 0-5.79-2.16-6.53-5.08l1.68.68z"/>
+                </svg>
+                Wishlist on Steam
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Gunslinger's Revenge. All rights reserved.</p>
+        <p>Follow us: 
+            <span class="social">Twitter</span> | 
+            <span class="social">Discord</span> | 
+            <span class="social">Steam</span>
+        </p>
+    </footer>
+</body>
+</html>
