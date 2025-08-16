@@ -125,7 +125,9 @@ a:hover {
 
 .site-nav .logo-text:hover {
     text-decoration: none;
-    color: #c87f2f;
+    color: #f5e9dc;
+    text-shadow: 0 0 10px #c87f2f, 0 0 20px #c87f2f;
+    transition: all 0.3s ease;
 }
 
 .site-nav .logo {
