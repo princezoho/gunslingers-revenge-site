@@ -1,40 +1,38 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Path Planning Mastery: Navigating Act Maps in Roguelikes</title>
-<meta name="description" content="Master strategic route selection in roguelike deckbuilders. Learn to plan optimal paths for maximum resource gain.">
-<link rel="stylesheet" href="../style.css?v=3">
-<link rel="stylesheet" href="../custom.css?v=5">
-<link rel="stylesheet" href="../nav-dropdown.css?v=1">
-<link rel="stylesheet" href="../backgrounds.css?v=2">
-<meta name="keywords" content="path planning, map navigation, roguelike strategy, route optimization, deckbuilder guide">
-
+<meta content="Master strategic route selection in roguelike deckbuilders. Learn to plan optimal paths for maximum resource gain." name="description"/>
+<link href="../style.css?v=3" rel="stylesheet"/>
+<link href="../custom.css?v=5" rel="stylesheet"/>
+<link href="../nav-dropdown.css?v=1" rel="stylesheet"/>
+<link href="../backgrounds.css?v=2" rel="stylesheet"/>
+<meta content="path planning, map navigation, roguelike strategy, route optimization, deckbuilder guide" name="keywords"/>
 <!-- Open Graph -->
-<meta property="og:title" content="Path Planning Mastery: Navigating Act Maps in Roguelikes">
-<meta property="og:description" content="Master strategic route selection in roguelike deckbuilders. Learn to plan optimal paths for maximum resource gain.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://gunslingersrevenge.com/posts/path-planning-mastery.html">
-<meta property="og:image" content="https://gunslingersrevenge.com/assets/gunslingers-revenge-logo.png">
-<meta property="og:site_name" content="Gunslinger's Revenge">
-<meta property="article:published_time" content="2024-12-20">
-<meta property="article:modified_time" content="2025-08-18">
-
+<meta content="Path Planning Mastery: Navigating Act Maps in Roguelikes" property="og:title"/>
+<meta content="Master strategic route selection in roguelike deckbuilders. Learn to plan optimal paths for maximum resource gain." property="og:description"/>
+<meta content="article" property="og:type"/>
+<meta content="https://gunslingersrevenge.com/posts/path-planning-mastery.html" property="og:url"/>
+<meta content="https://gunslingersrevenge.com/assets/gunslingers-revenge-logo.png" property="og:image"/>
+<meta content="Gunslinger's Revenge" property="og:site_name"/>
+<meta content="2024-12-20" property="article:published_time"/>
+<meta content="2025-08-18" property="article:modified_time"/>
 <!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Path Planning Mastery: Navigating Act Maps in Roguelikes">
-<meta name="twitter:description" content="Master strategic route selection in roguelike deckbuilders. Learn to plan optimal paths for maximum resource gain.">
-<meta name="twitter:image" content="https://gunslingersrevenge.com/assets/gunslingers-revenge-logo.png">
-<meta name="twitter:site" content="@gunslingersrev">
-
-<link rel="canonical" href="https://gunslingersrevenge.com/posts/path-planning-mastery.html">
-<meta name="author" content="Gunslinger's Revenge Team">
-<meta name="robots" content="index, follow, max-image-preview:large">
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Path Planning Mastery: Navigating Act Maps in Roguelikes" name="twitter:title"/>
+<meta content="Master strategic route selection in roguelike deckbuilders. Learn to plan optimal paths for maximum resource gain." name="twitter:description"/>
+<meta content="https://gunslingersrevenge.com/assets/gunslingers-revenge-logo.png" name="twitter:image"/>
+<meta content="@gunslingersrev" name="twitter:site"/>
+<link href="https://gunslingersrevenge.com/posts/path-planning-mastery.html" rel="canonical"/>
+<meta content="Gunslinger's Revenge Team" name="author"/>
+<meta content="index, follow, max-image-preview:large" name="robots"/>
 </head>
 <body>
 <nav class="site-nav">
-<img src="../assets/gunslingers-revenge-logo.png" alt="Gunslinger's Revenge" class="logo">
+<img alt="Gunslinger's Revenge" class="logo" src="../assets/gunslingers-revenge-logo.png"/>
 <ul class="nav-links">
 <li><a href="../index.html">Home</a></li>
 <li class="nav-dropdown">
@@ -42,119 +40,83 @@
 <div class="nav-dropdown-menu">
 <a href="../gameplay.html">Gameplay</a>
 <a href="../characters.html">Characters</a>
-<a href="../cards.html">Cards & Rarities</a>
-<a href="../tonics.html">Tonics & Crafting</a>
+<a href="../cards.html">Cards &amp; Rarities</a>
+<a href="../tonics.html">Tonics &amp; Crafting</a>
 <a href="../features.html">Features</a>
 <a href="../gallery.html">Gallery</a>
 </div>
 </li>
 <li><a href="../blog.html">Blog</a></li>
 <li><a href="../contact.html">Contact</a></li>
-<li><a href="https://subscribepage.io/U500SL" target="_blank" class="btn btn-primary">Newsletter</a></li>
-<li><a href="https://subscribepage.io/U500SL" target="_blank" class="btn btn-nav-steam">Wishlist</a></li>
+<li><a class="btn btn-primary" href="https://subscribepage.io/U500SL" target="_blank">Newsletter</a></li>
+<li><a class="btn btn-nav-steam" href="https://subscribepage.io/U500SL" target="_blank">Wishlist</a></li>
 </ul>
 </nav>
-
 <main>
 <article>
 <h1>Path Planning Mastery: Navigating Act Maps</h1>
 <p>Path planning separates strategic players from those who click randomly through nodes. Optimal routing through acts provides the resources and encounters needed for victory. This guide teaches advanced path planning techniques.</p>
-
 <h2>Reading the Map</h2>
 <p>Study the entire act map before choosing any path. Identify key nodes like elites, shops, and campfires. Note path convergences and divergences. This overview informs all routing decisions.</p>
-
 <p>Count node types along potential paths. A path with three campfires differs greatly from one with three elites. Quantify options to make informed comparisons.</p>
-
 <h2>Working Backward from Goals</h2>
-<p>Identify what your deck needs to succeed, then route toward those resources. Need card removal? Path through shops. Need upgrades? Prioritize campfires. Let requirements drive routing.</p>
-
+<p>Identify what your deck needs to succeed, then route toward those resources. Need card removal? Path through shops. Need upgrades? Prioritize campfires. Let requirements drive routing.</p><img alt="Card game concept illustration for Path Planning Mastery: Navigating Act Maps" loading="lazy" src="https://images.unsplash.com/photo-1554244933-d876deb6b2ff?w=1200" style="width: 100%; height: auto; margin: 2rem 0; border-radius: 8px;" title="Card game concept illustration - Path Planning Mastery: Navigating Act Maps"/>
 <p>Consider boss requirements and work backward. If the act boss punishes weak defense, ensure your path provides defensive options. Anticipate needs and route accordingly.</p>
-
 <div class="cta-box" style="background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%); padding: 2rem; border-radius: 8px; margin: 2rem 0;">
 <h3 style="color: white;">Chart Your Course!</h3>
 <p style="color: white;">Navigate the dangerous frontier in Gunslinger's Revenge!</p>
-<a href="https://subscribepage.io/U500SL" target="_blank" class="btn btn-primary" style="margin-right: 1rem;">Join Newsletter</a>
-<a href="../gameplay.html" class="btn btn-steam">Explore Features</a>
+<a class="btn btn-primary" href="https://subscribepage.io/U500SL" style="margin-right: 1rem;" target="_blank">Join Newsletter</a>
+<a class="btn btn-steam" href="../gameplay.html">Explore Features</a>
 </div>
-
 <h2>The Campfire Decision</h2>
 <p>Campfires offer the choice between healing and upgrading. Plan which you'll need at each campfire before routing. A path with campfires is only valuable if you can use them effectively.</p>
-
-<p>Sometimes upgrading at low health is correct if future nodes provide healing. Other times, healing is mandatory for survival. Anticipate campfire decisions during planning.</p>
-
+<p>Sometimes upgrading at low health is correct if future nodes provide healing. Other times, healing is mandatory for survival. Anticipate campfire decisions during planning.</p><img alt="Gaming strategy diagram supporting Path Planning Mastery: Navigating Act Maps" loading="lazy" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200" style="width: 100%; height: auto; margin: 2rem 0; border-radius: 8px;" title="Gaming strategy diagram - Path Planning Mastery: Navigating Act Maps"/>
 <h2>Shop Timing and Preparation</h2>
 <p>Shops require gold to provide value. Routing through shops without gold wastes opportunities. Plan gold accumulation before shop visits. Time shops for when you'll have purchasing power.</p>
-
 <p>Consider what shops might offer and whether you want it. Early shops provide attack cards and removal. Late shops offer expensive powers and relics. Route based on expected offerings.</p>
-
 <h2>Elite Positioning</h2>
 <p>Elite placement dramatically affects path value. Elites immediately after campfires allow upgrading for the fight. Elites before campfires let you heal afterward. Position matters as much as quantity.</p>
-
 <p>Some paths force multiple elites. Evaluate whether your deck can handle consecutive elite fights. The rewards might not justify the risk.</p>
-
 <h2>Question Mark Psychology</h2>
 <p>Unknown events create planning uncertainty. They might provide powerful benefits or unfortunate penalties. Risk-tolerant players favor question marks; risk-averse players avoid them.</p>
-
 <p>Learn event pools for each act. Knowing possible outcomes improves evaluation. Some acts have mostly beneficial events; others contain many penalties. Use this knowledge in routing.</p>
-
 <div class="cta-box" style="background: #1a2332; padding: 2rem; border-radius: 8px; margin: 2rem 0;">
 <h3 style="color: #c87f2f;">Every Choice Matters!</h3>
 <p style="color: #f5e9dc;">Strategic decisions shape your legend in Gunslinger's Revenge!</p>
-<a href="https://subscribepage.io/U500SL" target="_blank" class="btn btn-primary" style="margin-right: 1rem;">Get Early Access</a>
-<a href="../features.html" class="btn btn-steam">See Features</a>
+<a class="btn btn-primary" href="https://subscribepage.io/U500SL" style="margin-right: 1rem;" target="_blank">Get Early Access</a>
+<a class="btn btn-steam" href="../features.html">See Features</a>
 </div>
-
 <h2>Path Length Considerations</h2>
 <p>Longer paths provide more resources but also more damage. Short paths preserve health but limit power growth. Balance path length with deck needs and health resources.</p>
-
 <p>Sometimes the shortest path is correct when you're already powerful. Other times, long paths are necessary for adequate preparation. Evaluate based on current strength versus required strength.</p>
-
-<h2>Flexibility and Adaptation</h2>
+<h2>Flexibility and Adaptation</h2><img alt="Deckbuilder gameplay visualization for Path Planning Mastery: Navigating Act Maps" loading="lazy" src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=1200" style="width: 100%; height: auto; margin: 2rem 0; border-radius: 8px;" title="Deckbuilder gameplay visualization - Path Planning Mastery: Navigating Act Maps"/>
 <p>Initial path planning should be flexible. Card rewards might change your needs. Events might provide unexpected resources. Maintain backup routes for when plans change.</p>
-
 <p>Re-evaluate paths after significant changes. A powerful rare card might enable elite hunting. A cursed relic might require defensive routing. Adapt to new circumstances.</p>
-
 <h2>Act-Specific Strategies</h2>
 <p>Each act requires different routing priorities. Act 1 focuses on deck foundation and surviving elites. Act 2 emphasizes scaling and preparation. Act 3 demands boss-specific preparation.</p>
-
 <p>Learn act-specific encounter pools and difficulties. Some acts punish aggressive routing while others reward it. Adjust strategies based on act characteristics.</p>
-
 <h2>Resource Budgeting</h2>
 <p>Plan resource expenditure across entire acts. If you'll need 100 gold for crucial shop purchases, ensure your path generates it. If you need three upgrades, route through sufficient campfires.</p>
-
 <p>Consider resource opportunity costs. Gold spent on card removal can't buy relics. Campfires used for healing can't provide upgrades. Budget resources like any strategic game.</p>
-
 <h2>Information Gathering Routes</h2>
 <p>Early paths should provide information about your deck's direction. Fight variety helps identify weaknesses. Events might provide build-defining rewards. Route for maximum learning early.</p>
-
 <p>Later paths should exploit gathered information. Once you know your strategy, route for specific support. Information gathering transitions to execution.</p>
-
 <h2>Common Pathing Mistakes</h2>
 <p>Following the same path patterns regardless of deck needs. Every run requires unique routing based on specific circumstances. Avoid autopilot pathing.</p>
-
 <p>Overvaluing or undervaluing specific node types. Shops aren't always good. Elites aren't always bad. Context determines node value.</p>
-
 <p>Not planning beyond the current act. Future acts affect current routing. Save resources for later challenges when appropriate.</p>
-
 <h2>Advanced Pathing Techniques</h2>
 <p>Path convergence manipulation involves choosing routes that maintain multiple options longest. This preserves flexibility for adaptation.</p>
-
 <p>Node counting optimizes specific resources. If you need exactly two campfires and one shop, find the path providing exactly that. Precision routing prevents waste.</p>
-
 <h2>The Perfect Path Myth</h2>
 <p>No perfect path exists for all situations. Good pathing adapts to specific needs and circumstances. Focus on making reasonable decisions with available information.</p>
-
 <p>Even optimal pathing can't guarantee success. Randomness affects outcomes regardless of planning. Good pathing improves probabilities, not certainties.</p>
-
 <h2>Conclusion: The Journey Matters</h2>
 <p>Path planning transforms random wandering into strategic progression. Every node choice affects run trajectory. Mastering path planning provides consistent advantages that compound throughout runs.</p>
-
 <p>Develop pathing skills through conscious practice. Before choosing paths, articulate reasoning. Review whether paths provided expected value. This deliberate approach builds intuition.</p>
-
 <p>Ready to chart your path? <a href="../index.html">Gunslinger's Revenge</a> features strategic map navigation! <a href="https://subscribepage.io/U500SL" target="_blank">Join our newsletter</a> for routing guides!</p>
 </article>
 </main>
-
 <footer class="footer">
 <p>© 2025 Gunslinger's Revenge. All rights reserved.</p>
 <p>Follow us: <a href="../blog.html">Blog</a> | <a href="../contact.html">Contact</a> | <a href="https://subscribepage.io/U500SL" target="_blank">Newsletter</a></p>
