@@ -1,44 +1,41 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Balancing Deckbuilders: The Art and Science of Fair Play</title>
-<meta name="description" content="Master the complex art of balancing roguelike deckbuilders. Learn mathematical models, playtesting strategies, and ongoing balance maintenance.">
-<link rel="stylesheet" href="../style.css?v=3">
-<link rel="stylesheet" href="../custom.css?v=5">
-<link rel="stylesheet" href="../nav-dropdown.css?v=1">
-<link rel="stylesheet" href="../backgrounds.css?v=2">
-<meta name="keywords" content="game balance, deckbuilder balance, card game design, game balancing, roguelike balance">
-
+<meta content="Master the complex art of balancing roguelike deckbuilders. Learn mathematical models, playtesting strategies, and ongoing balance maintenance." name="description"/>
+<link href="../style.css?v=3" rel="stylesheet"/>
+<link href="../custom.css?v=5" rel="stylesheet"/>
+<link href="../nav-dropdown.css?v=1" rel="stylesheet"/>
+<link href="../backgrounds.css?v=2" rel="stylesheet"/>
+<meta content="game balance, deckbuilder balance, card game design, game balancing, roguelike balance" name="keywords"/>
 <!-- Open Graph -->
-<meta property="og:title" content="Balancing Deckbuilders: The Art and Science of Fair Play">
-<meta property="og:description" content="Master the complex art of balancing roguelike deckbuilders. Learn mathematical models, playtesting strategies, and ongoing balance maintenance.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://gunslingersrevenge.com/posts/balancing-deckbuilders.html">
-<meta property="og:image" content="https://gunslingersrevenge.com/assets/gunslingers-revenge-logo.png">
-<meta property="og:site_name" content="Gunslinger's Revenge">
-<meta property="article:published_time" content="2024-12-20">
-<meta property="article:modified_time" content="2025-08-18">
-<meta property="article:author" content="https://gunslingersrevenge.com/about">
-
+<meta content="Balancing Deckbuilders: The Art and Science of Fair Play" property="og:title"/>
+<meta content="Master the complex art of balancing roguelike deckbuilders. Learn mathematical models, playtesting strategies, and ongoing balance maintenance." property="og:description"/>
+<meta content="article" property="og:type"/>
+<meta content="https://gunslingersrevenge.com/posts/balancing-deckbuilders.html" property="og:url"/>
+<meta content="https://gunslingersrevenge.com/assets/gunslingers-revenge-logo.png" property="og:image"/>
+<meta content="Gunslinger's Revenge" property="og:site_name"/>
+<meta content="2024-12-20" property="article:published_time"/>
+<meta content="2025-08-18" property="article:modified_time"/>
+<meta content="https://gunslingersrevenge.com/about" property="article:author"/>
 <!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Balancing Deckbuilders: The Art and Science of Fair Play">
-<meta name="twitter:description" content="Master the complex art of balancing roguelike deckbuilders. Learn mathematical models, playtesting strategies, and ongoing balance maintenance.">
-<meta name="twitter:image" content="https://gunslingersrevenge.com/assets/gunslingers-revenge-logo.png">
-<meta name="twitter:site" content="@gunslingersrev">
-<meta name="twitter:creator" content="@gunslingersrev">
-
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Balancing Deckbuilders: The Art and Science of Fair Play" name="twitter:title"/>
+<meta content="Master the complex art of balancing roguelike deckbuilders. Learn mathematical models, playtesting strategies, and ongoing balance maintenance." name="twitter:description"/>
+<meta content="https://gunslingersrevenge.com/assets/gunslingers-revenge-logo.png" name="twitter:image"/>
+<meta content="@gunslingersrev" name="twitter:site"/>
+<meta content="@gunslingersrev" name="twitter:creator"/>
 <!-- Additional SEO -->
-<link rel="canonical" href="https://gunslingersrevenge.com/posts/balancing-deckbuilders.html">
-<meta name="author" content="Gunslinger's Revenge Team - Jeje Studios">
-<meta name="robots" content="index, follow, max-image-preview:large">
-<meta name="googlebot" content="index, follow">
-<meta name="language" content="English">
-<meta name="revisit-after" content="7 days">
-<meta name="rating" content="general">
-
+<link href="https://gunslingersrevenge.com/posts/balancing-deckbuilders.html" rel="canonical"/>
+<meta content="Gunslinger's Revenge Team - Jeje Studios" name="author"/>
+<meta content="index, follow, max-image-preview:large" name="robots"/>
+<meta content="index, follow" name="googlebot"/>
+<meta content="English" name="language"/>
+<meta content="7 days" name="revisit-after"/>
+<meta content="general" name="rating"/>
 <!-- Schema.org Structured Data -->
 <script type="application/ld+json">
 {
@@ -71,7 +68,7 @@
 </head>
 <body>
 <nav class="site-nav">
-<img src="../assets/gunslingers-revenge-logo.png" alt="Gunslinger's Revenge" class="logo">
+<img alt="Gunslinger's Revenge" class="logo" src="../assets/gunslingers-revenge-logo.png"/>
 <ul class="nav-links">
 <li><a href="../index.html">Home</a></li>
 <li class="nav-dropdown">
@@ -79,218 +76,156 @@
 <div class="nav-dropdown-menu">
 <a href="../gameplay.html">Gameplay</a>
 <a href="../characters.html">Characters</a>
-<a href="../cards.html">Cards & Rarities</a>
-<a href="../tonics.html">Tonics & Crafting</a>
+<a href="../cards.html">Cards &amp; Rarities</a>
+<a href="../tonics.html">Tonics &amp; Crafting</a>
 <a href="../features.html">Features</a>
 <a href="../gallery.html">Gallery</a>
 </div>
 </li>
 <li><a href="../blog.html">Blog</a></li>
 <li><a href="../contact.html">Contact</a></li>
-<li><a href="https://subscribepage.io/U500SL" target="_blank" class="btn btn-primary">Newsletter</a></li>
-<li><a href="https://subscribepage.io/U500SL" target="_blank" class="btn btn-nav-steam">Wishlist</a></li>
+<li><a class="btn btn-primary" href="https://subscribepage.io/U500SL" target="_blank">Newsletter</a></li>
+<li><a class="btn btn-nav-steam" href="https://subscribepage.io/U500SL" target="_blank">Wishlist</a></li>
 </ul>
 </nav>
-
 <main>
 <article class="blog-post">
 <h1>Balancing Deckbuilders: The Art and Science of Creating Fair and Fun Games</h1>
-
 <div class="article-meta">
 <span class="author">By Gunslinger's Revenge Team</span> | 
 <span class="date">December 2024</span> | 
 <span class="reading-time">22 min read</span>
 </div>
-
 <p class="lead-paragraph">Balance is the invisible foundation supporting every successful deckbuilder. When done right, players focus on strategy and fun. When done wrong, dominant strategies and useless cards destroy enjoyment. This comprehensive guide explores the intricate art and precise science of balancing roguelike deckbuilders.</p>
-
 <h2>Understanding Balance in Deckbuilders</h2>
 <p>Balance in deckbuilders means more than numerical equality. It encompasses power levels, strategic diversity, progression pacing, and player agency. True balance creates environments where multiple strategies can succeed, player choices matter, and both victories and defeats feel fair.</p>
-
 <p>The roguelike element adds complexity through randomness and run variance. A card might be balanced on average but broken with specific combinations. This emergence makes deckbuilder balance particularly challenging and fascinating.</p>
-
-<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200" alt="Chart showing card power distribution and balance curves" title="Game Balance Power Distribution Chart" loading="lazy" style="width: 100%; height: auto; margin: 2rem 0;">
-
+<img alt="Balancing Deckbuilders: The Art and Science of Creating Fair and Fun Games gameplay screenshot showing game interface" loading="lazy" src="https://cdn.akamai.steamstatic.com/steam/apps/646570/ss_8b29f7e92d02b13c3645d9631f0199f73227d05a.1920x1080.jpg" style="width: 100%; height: auto; margin: 2rem 0; border-radius: 8px; max-width: 1200px;" title="Balancing Deckbuilders: The Art and Science of Creating Fair and Fun Games - In-Game Screenshot"/>
 <h2>Mathematical Foundations of Balance</h2>
 <h3>Expected Value Calculations</h3>
 <p>Every card has measurable expected value combining damage, defense, and utility. A 2-energy card dealing 12 damage has 6 damage per energy. A 1-energy card drawing 2 cards provides different but comparable value. Understanding these mathematical relationships enables systematic balancing.</p>
-
 <h3>Power Curves and Scaling</h3>
 <p>Cards should follow consistent power curves relating cost to effect. Linear scaling (1 energy = 5 damage, 2 energy = 10 damage) is simple but boring. Non-linear scaling creates interesting decisions but requires careful calibration to prevent exploitation.</p>
-
 <h3>Probability and Variance</h3>
 <p>Random effects need probability weighting. A 50% chance for 20 damage averages 10 damage but has high variance. Players might love or hate such cards depending on risk tolerance. Balance must consider both average case and extremes.</p>
-
 <div class="cta-box" style="background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%); padding: 2rem; border-radius: 8px; margin: 2rem 0;">
 <h3 style="color: white;">Perfectly Balanced Gameplay!</h3>
 <p style="color: white;">Gunslinger's Revenge undergoes rigorous balancing to ensure every card and strategy has its place!</p>
-<a href="https://subscribepage.io/U500SL" target="_blank" class="btn btn-primary" style="margin-right: 1rem;">Join Beta Testing</a>
-<a href="../cards.html" class="btn btn-steam">See Our Cards</a>
+<a class="btn btn-primary" href="https://subscribepage.io/U500SL" style="margin-right: 1rem;" target="_blank">Join Beta Testing</a>
+<a class="btn btn-steam" href="../cards.html">See Our Cards</a>
 </div>
-
 <h2>The Balancing Process</h2>
 <h3>Initial Design and Theoretical Balance</h3>
 <p>Start with spreadsheets establishing baseline values. Define what 1 energy should accomplish. Create templates for common effects. This mathematical foundation provides consistency even as content expands.</p>
-
 <h3>Internal Playtesting</h3>
 <p>Developers playing their own game reveals obvious problems but suffers from bias. Developers know intended strategies and might miss exploits players will find. Still, internal testing catches egregious balance issues early.</p>
-
 <h3>Closed Beta Testing</h3>
 <p>Limited external testing provides fresh perspectives. Beta testers find exploits developers missed and identify unfun patterns. Their feedback is invaluable but represents a small, often hardcore sample that might not reflect broader player base.</p>
-
 <h3>Data-Driven Iteration</h3>
 <p>Launch provides massive data about card performance, win rates, and player behavior. Analytics reveal which cards over or underperform. However, data without context can mislead—a card might have low win rate because new players misuse it, not because it's weak.</p>
-
-<img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200" alt="Diagram showing the iterative playtesting and balancing cycle" title="Iterative Game Testing and Balance Cycle" loading="lazy" style="width: 100%; height: auto; margin: 2rem 0;">
-
+<img alt="Balancing Deckbuilders: The Art and Science of Creating Fair and Fun Games strategic gameplay moment" loading="lazy" src="https://cdn.akamai.steamstatic.com/steam/apps/1102190/ss_79b1152ad59ae04fdf3aa66b95e82eabdc83e3c4.1920x1080.jpg" style="width: 100%; height: auto; margin: 2rem 0; border-radius: 8px; max-width: 1200px;" title="Balancing Deckbuilders: The Art and Science of Creating Fair and Fun Games - Strategic Gameplay"/>
 <h2>Common Balance Problems and Solutions</h2>
 <h3>Power Creep</h3>
 <p>New content gradually becoming stronger than old content is insidious. Players expect new cards to be exciting and powerful, but constant escalation invalidates older content. Solution: Establish and maintain power budgets. Make new content interesting through novelty, not raw power.</p>
-
 <h3>Dominant Strategies</h3>
 <p>When one strategy consistently outperforms others, diversity dies. Players feel forced into specific builds, reducing replayability. Solution: Ensure multiple viable strategies through careful counterplay design. Every strategy should have strengths and weaknesses.</p>
-
 <h3>Trap Options</h3>
 <p>Cards that seem useful but are actually terrible frustrate players, especially newcomers. These "noob traps" create feel-bad moments when players realize they've been building incorrectly. Solution: Every card should have legitimate use cases, even if niche.</p>
-
 <h3>Infinite Combos</h3>
 <p>Combinations allowing infinite resources or actions break games. While some players enjoy discovering these exploits, they trivialize challenge and frustrate others. Solution: Implement systemic safeguards like turn limits, diminishing returns, or combo breakers.</p>
-
 <div class="cta-box" style="background: #1a2332; padding: 2rem; border-radius: 8px; margin: 2rem 0;">
 <h3 style="color: #c87f2f;">Help Us Balance!</h3>
 <p style="color: #f5e9dc;">Join Gunslinger's Revenge beta testing to help perfect our game balance!</p>
-<a href="https://subscribepage.io/U500SL" target="_blank" class="btn btn-primary" style="margin-right: 1rem;">Become a Tester</a>
-<a href="../features.html" class="btn btn-steam">Learn More</a>
+<a class="btn btn-primary" href="https://subscribepage.io/U500SL" style="margin-right: 1rem;" target="_blank">Become a Tester</a>
+<a class="btn btn-steam" href="../features.html">Learn More</a>
 </div>
-
 <h2>Balancing Different Game Elements</h2>
 <h3>Card Rarity and Power</h3>
 <p>Should rare cards be stronger than common cards? Many games say yes, creating excitement around rare acquisitions. However, this can lead to pay-to-win perceptions and reduced strategic diversity. Alternative: Make rare cards more specialized or complex rather than strictly stronger.</p>
-
 <h3>Resource Systems</h3>
 <p>Energy, mana, or action points fundamentally shape balance. Too little restricts options; too much enables degenerate combos. Resource generation cards require extra scrutiny as they multiply other cards' effectiveness.</p>
-
 <h3>Card Draw and Deck Manipulation</h3>
 <p>Drawing cards is incredibly powerful in deckbuilders. It provides options, enables combos, and increases consistency. Card draw must be carefully costed and limited to prevent excessive advantage generation.</p>
-
 <h3>Defensive vs Offensive Balance</h3>
 <p>Games need tension between defense and offense. Pure defense leads to stalemates; pure offense creates coin flip games. The balance point varies by game but should create interesting decisions about resource allocation.</p>
-
 <h2>Systemic Balance Approaches</h2>
 <h3>Rock-Paper-Scissors Dynamics</h3>
 <p>Creating strategies that counter each other ensures no single approach dominates. Aggressive beats greedy, control beats aggressive, greedy beats control. This creates metagame evolution as players adapt to prevalent strategies.</p>
-
 <h3>Diminishing Returns</h3>
 <p>Making successive copies of effects less valuable prevents extreme strategies. The first strength gain might give +2 damage, the second +1, the third +0. This allows powerful effects while preventing exploitation.</p>
-
 <h3>Opportunity Cost Design</h3>
 <p>Every choice should sacrifice something meaningful. Powerful cards might exhaust, preventing reuse. Cheap cards might be weak individually. This ensures no option is strictly superior to others.</p>
-
 <h3>Answers and Counters</h3>
 <p>Every strategy needs accessible counters. If poison strategies dominate, artifact removal should exist. If big creatures rule, removal spells provide answers. This creates dynamic gameplay where adaptation matters.</p>
-
-<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200" alt="Strategy triangle showing rock-paper-scissors balance dynamics" title="Rock Paper Scissors Balance Strategy Triangle" loading="lazy" style="width: 100%; height: auto; margin: 2rem 0;">
-
+<img alt="Balancing Deckbuilders: The Art and Science of Creating Fair and Fun Games card battle in action" loading="lazy" src="https://cdn.akamai.steamstatic.com/steam/apps/1092790/ss_40c5fb6a8c77e8f86d96c4b64f2ddfc70e3a70f2.1920x1080.jpg" style="width: 100%; height: auto; margin: 2rem 0; border-radius: 8px; max-width: 1200px;" title="Balancing Deckbuilders: The Art and Science of Creating Fair and Fun Games - Card Battle Scene"/>
 <h2>Balancing for Different Skill Levels</h2>
 <h3>Skill Floors and Ceilings</h3>
 <p>Cards should be usable by newcomers but rewarding for experts. Simple effects with hidden depth satisfy both audiences. A basic "deal damage" card might have complex timing considerations experts exploit.</p>
-
 <h3>Complexity Budgets</h3>
 <p>Not every card should be complex. Simple, powerful effects give new players anchors while learning. Complex cards provide depth for veterans. Balance the ratio to serve your target audience.</p>
-
 <h3>Teaching Through Balance</h3>
 <p>Early game content should demonstrate core concepts clearly. Starter cards might be slightly overtuned to feel good while learning. Later content can be more nuanced as players develop understanding.</p>
-
 <h3>Skill Expression Opportunities</h3>
 <p>Good balance creates moments where player skill matters. Close decisions, timing considerations, and risk assessment all allow better players to excel without making games impossible for newcomers.</p>
-
 <h2>The Psychology of Balance Perception</h2>
 <h3>Feels vs Reals</h3>
 <p>Players' perception of balance often differs from mathematical reality. A mathematically fair card that feels frustrating might need adjustment. Conversely, fun cards might be acceptable even if slightly overpowered.</p>
-
 <h3>Loss Aversion and Negative Experiences</h3>
 <p>Players remember negative experiences more than positive ones. One frustrating loss to an "overpowered" strategy might overshadow ten normal games. Balance must consider emotional impact alongside numerical fairness.</p>
-
 <h3>Power Fantasy vs Challenge</h3>
 <p>Players want to feel powerful but also challenged. Too much power trivializes content; too little feels frustrating. The sweet spot varies by player, making perfect balance impossible but worth pursuing.</p>
-
 <h3>Community Perception Management</h3>
 <p>Balance complaints spread quickly through communities. Address concerns transparently, explain balance decisions, and show you're listening. Sometimes perception problems require communication more than mechanical changes.</p>
-
 <h2>Tools and Techniques for Balancing</h2>
 <h3>Automated Testing</h3>
 <p>AI can play millions of games, revealing statistical imbalances faster than human testing. However, AI might miss strategies obvious to humans or overvalue certain approaches. Use as supplement, not replacement, for human testing.</p>
-
 <h3>Analytics and Telemetry</h3>
 <p>Track everything: win rates, pick rates, game length, player retention. Heat maps show where players struggle. Funnel analysis reveals where they quit. This data guides balance priorities.</p>
-
 <h3>A/B Testing</h3>
 <p>Test balance changes with player subsets before full implementation. This reveals impact without committing to potentially harmful changes. However, splitting the player base can create confusion.</p>
-
 <h3>Simulation and Modeling</h3>
 <p>Mathematical models predict balance changes' impact before implementation. Monte Carlo simulations explore edge cases. These tools help but can't capture all emergent behaviors.</p>
-
-<img src="../assets/balance-tools.jpg" alt="Screenshots of various balancing tools and analytics dashboards" style="width: 100%; height: auto; margin: 2rem 0;">
-
+<img alt="Screenshots of various balancing tools and analytics dashboards" src="../assets/balance-tools.jpg" style="width: 100%; height: auto; margin: 2rem 0;"/>
 <h2>Post-Launch Balance Maintenance</h2>
 <h3>Regular Balance Patches</h3>
 <p>Consistent updates show commitment to balance. Monthly or quarterly patches address issues while keeping the meta fresh. However, too frequent changes frustrate players who can't keep up.</p>
-
 <h3>Community Communication</h3>
 <p>Explain balance changes clearly. Players might disagree but appreciate understanding reasoning. Preview upcoming changes to gather feedback and prepare players for adjustments.</p>
-
 <h3>Buff vs Nerf Philosophy</h3>
 <p>Buffing weak cards feels better than nerfing strong ones, but power creep results from only buffing. Nerfing frustrates players who invested in now-weakened strategies. Balance both approaches based on context.</p>
-
 <h3>Meta Rotation</h3>
 <p>Some games deliberately rotate balance to keep things fresh. This month's dominant strategy becomes next month's underdog. This maintains engagement but requires careful management to avoid alienating players.</p>
-
 <h2>Case Studies in Balance Success and Failure</h2>
 <h3>Slay the Spire: Deliberate Imbalance</h3>
 <p>Slay the Spire includes deliberately weak cards to create drafting decisions and increase run variance. Not every card is equally viable, but every card has situational uses. This "perfect imbalance" creates interesting choices.</p>
-
 <h3>Hearthstone: The Eternal Struggle</h3>
 <p>Hearthstone's massive card pool and competitive focus create constant balance challenges. Regular nerfs and buffs keep the meta evolving but frustrate players whose decks get invalidated. Their journey illustrates balance's ongoing nature.</p>
-
 <h3>Monster Train: Covenant Scaling</h3>
 <p>Monster Train balances through difficulty modifiers rather than card changes. Higher covenants add restrictions that invalidate certain strategies, forcing adaptation. This allows power fantasy at low levels while maintaining challenge for experts.</p>
-
 <h3>Artifact: Marketplace Imbalance</h3>
 <p>Valve's Artifact failed partly due to economy imbalance. Rare cards' power combined with real-money marketplace created pay-to-win perception. The game's failure demonstrates how balance extends beyond pure gameplay.</p>
-
 <h2>Balancing Expansions and New Content</h2>
 <h3>Maintaining Core Balance</h3>
 <p>New content must respect existing balance while adding novelty. Power creep temptation is strong—new cards must excite players. Resist by making new content interesting through mechanics, not raw power.</p>
-
 <h3>Synergy Considerations</h3>
 <p>New cards might be balanced alone but broken with existing cards. Test extensively for unexpected combinations. Consider limiting design space to prevent future problems.</p>
-
 <h3>Meta Disruption</h3>
 <p>New content should shake up established strategies without completely invalidating them. Add counters to dominant strategies and support for weak ones. Evolution, not revolution, maintains player investment.</p>
-
 <h3>Legacy Support</h3>
 <p>Don't abandon old content when releasing new. Update and rebalance older cards to maintain relevance. This respects player investment and maintains variety.</p>
-
 <h2>The Future of Balance in Deckbuilders</h2>
 <h3>AI-Assisted Balancing</h3>
 <p>Machine learning could identify balance issues before players find them. AI might even suggest balance changes based on desired meta states. However, human oversight remains crucial for fun factor.</p>
-
 <h3>Dynamic Balance Systems</h3>
 <p>Games could automatically adjust balance based on live data. Underperforming cards get slight buffs; overperforming ones get minor nerfs. This maintains balance without patch delays but might feel unstable.</p>
-
 <h3>Player-Driven Balance</h3>
 <p>Some games experiment with community voting on balance changes. This increases engagement but risks popularity contests over good design. Mob rule doesn't always produce balanced games.</p>
-
 <h3>Personalized Balance</h3>
 <p>AI could create personalized balance for individual players, adjusting difficulty and card power to maintain engagement. This risks fragmenting the player base and creating unfair competitive advantages.</p>
-
 <h2>Conclusion: The Never-Ending Journey</h2>
 <p>Perfect balance is impossible and perhaps undesirable. Slight imbalances create texture, enabling discovery and mastery. The goal isn't mathematical perfection but dynamic, engaging gameplay where player choices matter.</p>
-
 <p>Balance is an ongoing conversation between developers and players. It requires humility to admit mistakes, wisdom to know when to change things, and courage to make difficult decisions. The best-balanced games aren't those that achieve perfection but those that maintain fun through constant evolution.</p>
-
 <p>Remember: players don't experience balance spreadsheets—they experience games. While mathematical foundation is crucial, the ultimate measure of balance is whether players are having fun, feeling challenged, and coming back for more.</p>
-
 <div class="author-box" style="background: #f5f5f5; padding: 2rem; border-radius: 8px; margin: 3rem 0;">
 <h3>Balance in Gunslinger's Revenge</h3>
 <p>We're committed to creating balanced, engaging gameplay where every card has purpose and every strategy has merit. Through extensive testing and community feedback, we're crafting a game where skill matters more than luck.</p>
@@ -298,7 +233,6 @@
 </div>
 </article>
 </main>
-
 <footer class="footer">
 <p>© 2025 Gunslinger's Revenge by Jeje Studios. All rights reserved.</p>
 <p>Follow us: <a href="../blog.html">Blog</a> | <a href="../contact.html">Contact</a> | <a href="https://subscribepage.io/U500SL" target="_blank">Newsletter</a></p>

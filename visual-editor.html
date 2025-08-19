@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Editor - Gunslinger's Revenge</title>
+    <link rel="stylesheet" href="https://unpkg.com/grapesjs/dist/css/grapes.min.css">
+    <script src="https://unpkg.com/grapesjs"></script>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+        }
+        
+        #editor-container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        #top-panel {
+            background: #2c3e50;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        #top-panel h2 {
+            margin: 0;
+            font-size: 18px;
+        }
+        
+        #gjs {
+            flex: 1;
+            overflow: hidden;
+        }
+        
+        .panel-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .panel-buttons button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+        
+        .panel-buttons button:hover {
+            background: #2980b9;
+        }
+        
+        .panel-buttons button.danger {
+            background: #e74c3c;
+        }
+        
+        .panel-buttons button.danger:hover {
+            background: #c0392b;
+        }
+        
+        .panel-buttons button.success {
+            background: #27ae60;
+        }
+        
+        .panel-buttons button.success:hover {
+            background: #229954;
+        }
+        
+        #file-selector {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        #file-selector select {
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #34495e;
+            background: white;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <div id="editor-container">
+        <div id="top-panel">
+            <h2>🎯 Gunslinger's Revenge - Visual Editor</h2>
+            <div id="file-selector">
+                <label>Edit Page:</label>
+                <select id="page-select">
+                    <option value="">Select a page to edit...</option>
+                    <option value="index.html">Home (index.html)</option>
+                    <option value="gameplay.html">Gameplay</option>
+                    <option value="features.html">Features</option>
+                    <option value="cards.html">Cards</option>
+                    <option value="characters.html">Characters</option>
+                    <option value="horses-charms.html">Horses & Charms</option>
+                    <option value="tonics.html">Tonics</option>
+                    <option value="gallery.html">Gallery</option>
+                    <option value="blog.html">Blog</option>
+                    <option value="contact.html">Contact</option>
+                </select>
+            </div>
+            <div class="panel-buttons">
+                <button onclick="loadSelectedPage()">📂 Load Page</button>
+                <button onclick="previewInBrowser()" class="success">👁️ Preview</button>
+                <button onclick="saveChanges()" class="success">💾 Save Changes</button>
+                <button onclick="showHelp()">❓ Help</button>
+            </div>
+        </div>
+        <div id="gjs"></div>
+    </div>
+
+    <script>
+        let editor;
+        let currentFile = '';
+        
+        // Initialize GrapesJS
+        function initEditor() {
+            editor = grapesjs.init({
+                container: '#gjs',
+                height: '100%',
+                width: 'auto',
+                storageManager: {
+                    type: 'local',
+                    autosave: true,
+                    autoload: false,
+                    stepsBeforeSave: 1,
+                },
+                deviceManager: {
+                    devices: [
+                        {
+                            name: 'Desktop',
+                            width: '',
+                        },
+                        {
+                            name: 'Tablet',
+                            width: '768px',
+                        },
+                        {
+                            name: 'Mobile',
+                            width: '320px',
+                        }
+                    ]
+                },
+                panels: {
+                    defaults: [
+                        {
+                            id: 'panel-devices',
+                            el: '.panel__devices',
+                            buttons: [
+                                {
+                                    id: 'device-desktop',
+                                    label: '💻',
+                                    command: 'set-device-desktop',
+                                    active: true,
+                                    togglable: false,
+                                },
+                                {
+                                    id: 'device-tablet',
+                                    label: '📱',
+                                    command: 'set-device-tablet',
+                                    togglable: false,
+                                },
+                                {
+                                    id: 'device-mobile',
+                                    label: '📲',
+                                    command: 'set-device-mobile',
+                                    togglable: false,
+                                }
+                            ],
+                        }
+                    ]
+                },
+                plugins: [],
+                canvas: {
+                    styles: [
+                        'style.css',
+                        'custom.css',
+                        'nav-dropdown.css',
+                        'backgrounds.css'
+                    ],
+                },
+                blockManager: {
+                    appendTo: '#blocks',
+                    blocks: [
+                        {
+                            id: 'section',
+                            label: 'Section',
+                            content: '<section class="section"><div class="container">Content here</div></section>',
+                        },
+                        {
+                            id: 'text',
+                            label: 'Text',
+                            content: '<p>Insert your text here</p>',
+                        },
+                        {
+                            id: 'heading',
+                            label: 'Heading',
+                            content: '<h2>Your Heading</h2>',
+                        },
+                        {
+                            id: 'image',
+                            label: 'Image',
+                            content: '<img src="assets/logo-gunslingers.png" alt="Image"/>',
+                        },
+                        {
+                            id: 'button',
+                            label: 'Button',
+                            content: '<button class="btn">Click Me</button>',
+                        },
+                        {
+                            id: 'link',
+                            label: 'Link',
+                            content: '<a href="#">Link</a>',
+                        },
+                        {
+                            id: 'divider',
+                            label: 'Divider',
+                            content: '<hr/>',
+                        },
+                        {
+                            id: 'columns',
+                            label: '2 Columns',
+                            content: `<div style="display: flex; gap: 20px;">
+                                <div style="flex: 1; padding: 10px;">Column 1</div>
+                                <div style="flex: 1; padding: 10px;">Column 2</div>
+                            </div>`,
+                        },
+                        {
+                            id: 'card',
+                            label: 'Card',
+                            content: `<div style="border: 1px solid #ddd; padding: 20px; border-radius: 8px; margin: 10px 0;">
+                                <h3>Card Title</h3>
+                                <p>Card content goes here</p>
+                            </div>`,
+                        }
+                    ]
+                }
+            });
+
+            // Add device commands
+            editor.Commands.add('set-device-desktop', {
+                run: editor => editor.setDevice('Desktop')
+            });
+            editor.Commands.add('set-device-tablet', {
+                run: editor => editor.setDevice('Tablet')
+            });
+            editor.Commands.add('set-device-mobile', {
+                run: editor => editor.setDevice('Mobile')
+            });
+
+            // Show welcome message
+            showWelcome();
+        }
+
+        function loadSelectedPage() {
+            const select = document.getElementById('page-select');
+            const file = select.value;
+            
+            if (!file) {
+                alert('Please select a page to edit');
+                return;
+            }
+            
+            loadPage(file);
+        }
+
+        async function loadPage(filename) {
+            try {
+                const response = await fetch(filename);
+                if (!response.ok) {
+                    throw new Error('File not found');
+                }
+                
+                let html = await response.text();
+                currentFile = filename;
+                
+                // Extract body content
+                const bodyMatch = html.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
+                if (bodyMatch) {
+                    // Set the HTML content
+                    editor.setComponents(bodyMatch[1]);
+                    
+                    // Extract and set styles
+                    const styleMatches = html.match(/<style[^>]*>([\s\S]*?)<\/style>/gi);
+                    if (styleMatches) {
+                        let styles = '';
+                        styleMatches.forEach(style => {
+                            const content = style.replace(/<\/?style[^>]*>/gi, '');
+                            styles += content + '\n';
+                        });
+                        editor.setStyle(styles);
+                    }
+                }
+                
+                alert(`✅ Loaded: ${filename}\n\nYou can now drag and drop elements from the blocks panel on the right!`);
+            } catch (error) {
+                alert(`❌ Error loading file: ${error.message}`);
+            }
+        }
+
+        function saveChanges() {
+            if (!currentFile) {
+                alert('No file is currently loaded. Please load a page first.');
+                return;
+            }
+            
+            const html = editor.getHtml();
+            const css = editor.getCss();
+            
+            // Create a blob with the content
+            const fullHtml = `<!-- Modified content from visual editor -->
+<!-- Original file: ${currentFile} -->
+<style>${css}</style>
+${html}`;
+            
+            const blob = new Blob([fullHtml], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            
+            // Create download link
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `edited_${currentFile}`;
+            a.click();
+            
+            alert(`✅ Changes saved!\n\nFile downloaded as: edited_${currentFile}\n\nTo apply changes, replace the original ${currentFile} with this downloaded file.`);
+        }
+
+        function previewInBrowser() {
+            const html = editor.getHtml();
+            const css = editor.getCss();
+            
+            const fullHtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preview - Gunslinger's Revenge</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="custom.css">
+    <link rel="stylesheet" href="nav-dropdown.css">
+    <link rel="stylesheet" href="backgrounds.css">
+    <style>${css}</style>
+</head>
+<body>
+    ${html}
+</body>
+</html>`;
+            
+            const blob = new Blob([fullHtml], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            window.open(url, '_blank');
+        }
+
+        function showHelp() {
+            alert(`🎯 Visual Editor Help
+
+HOW TO USE:
+1. Select a page from the dropdown menu
+2. Click "Load Page" to open it in the editor
+3. Drag elements from the right panel onto your page
+4. Click on elements to edit their properties
+5. Use the style manager to change colors, fonts, spacing
+6. Save your changes when done
+
+FEATURES:
+• Drag & Drop elements
+• Click any element to edit
+• Double-click text to edit inline
+• Right panel: Add new blocks
+• Left panel: Layers and styles
+• Top bar: Device preview modes
+
+SHORTCUTS:
+• Click: Select element
+• Double-click: Edit text
+• Delete key: Remove selected element
+• Ctrl+Z: Undo
+• Ctrl+Shift+Z: Redo`);
+        }
+
+        function showWelcome() {
+            setTimeout(() => {
+                alert(`🎯 Welcome to Gunslinger's Revenge Visual Editor!
+
+This is a drag-and-drop website builder for your site.
+
+TO GET STARTED:
+1. Select a page from the dropdown (try "Home")
+2. Click "Load Page"
+3. Start dragging elements from the blocks panel!
+
+No coding required! 🎨`);
+            }, 500);
+        }
+
+        // Initialize editor when page loads
+        window.onload = initEditor;
+    </script>
+</body>
+</html>
