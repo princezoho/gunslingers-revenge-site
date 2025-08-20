@@ -1,0 +1,93 @@
+/* Custom overrides to adjust layout */
+
+/* Shift the parchment image a bit to the left compared to the default right‑shift.
+   Applying a small positive margin‑left value inverts the previous offset and
+   brings the image slightly closer to the page edge. */
+.stat-sheet-image {
+  margin-left: 5px !important;
+}
+
+/* Force blog posts to stack vertically on all screen sizes */
+.posts {
+  grid-template-columns: 1fr !important;
+  /* Add horizontal padding so blog posts have breathing room
+     from the page edges. 1.25rem ≈ 20px */
+  padding-left: 1.25rem !important;
+  padding-right: 1.25rem !important;
+}
+
+/* Set proper padding for stat sheet content to match the image */
+.stat-content {
+  padding: 3rem 4rem !important;
+  /* Ensure text uses the standard dark color defined by the original design */
+  color: #111111 !important;
+  text-align: center !important;
+}
+
+/* Adjust padding for larger parchment on homepage - reduced gutters */
+.sfx-section .stat-content {
+  padding: 4rem 5rem !important;
+  width: 65% !important;
+}
+
+/* Override text color within stat sheet headings and paragraphs */
+.stat-content h2,
+.stat-content p {
+  color: #111111 !important;
+}
+
+/* Homepage specific stat sheet styling to match the image */
+.sfx-section .stat-sheet {
+  min-width: 900px !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+}
+
+/* Make the parchment image 20% larger for homepage sections */
+.sfx-section .stat-sheet-image {
+  transform: scale(1.2) translateX(-2%);
+  transform-origin: center center;
+}
+
+.sfx-section .stat-content h2 {
+  font-size: 3.8rem !important;
+  font-weight: bold !important;
+  margin-bottom: 2rem !important;
+  font-family: 'Wanted', serif !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  line-height: 1.1 !important;
+}
+
+.sfx-section .stat-content p {
+  font-size: 1.4rem !important;
+  line-height: 1.4 !important;
+  margin-bottom: 1.5rem !important;
+  text-align: center !important;
+  text-transform: uppercase !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.03em !important;
+}
+
+/* Mobile overrides: hide the parchment on smaller screens and reduce
+   the stat-sheet padding to approximately 10px. The breakpoint of
+   768px accommodates most tablet and mobile widths. */
+@media (max-width: 768px) {
+  .stat-sheet-image {
+    display: none !important;
+  }
+  .stat-content {
+    /* On small screens, remove the parchment panel entirely and present
+       text directly on the animated background. */
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    padding: 0.625rem !important;
+    /* Expand the content to fill the available width and remove auto margins
+       inherited from the base mobile styles so text sits directly on the GIF */
+    width: 100% !important;
+    margin: 0 !important;
+    /* Maintain dark text color on mobile so it remains legible over the GIF */
+    color: #111111 !important;
+  }
+}

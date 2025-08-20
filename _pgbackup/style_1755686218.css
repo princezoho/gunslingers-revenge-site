@@ -2,13 +2,11 @@
 /* Load the Wanted font provided by the user. */
 @font-face {
     font-family: 'Wanted';
-
     /* Load the Wanted font from the assets directory. It lives at assets/wanted.ttf in the repository root. */
     src: url('assets/wanted.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -19,10 +17,8 @@ body {
     /* Use the Wanted display font across the entire site for a cohesive Western style */
     font-family: 'Wanted', sans-serif;
     line-height: 1.6;
-
     /* Set a dark background so no light band shows between full‑width sections. */
     background-color: #0a0a0a;
-
     /* Use a light text color for readability on dark backgrounds. */
     color: #f5e9dc;
     -webkit-font-smoothing: antialiased;
@@ -33,7 +29,6 @@ h1,
 h2,
 h3 {
     margin-bottom: 0.5rem;
-
     /* Use a light color for headings to stand out on dark or busy backgrounds */
     color: #f5e9dc;
     font-family: 'Wanted', sans-serif;
@@ -83,7 +78,6 @@ a:hover {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
     color: #fff;
-
     /* Use the Wanted font for the main title */
     font-family: 'Wanted', sans-serif;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
@@ -92,15 +86,14 @@ a:hover {
 .hero-logo-title {
     display: block;
     margin: 0 0 1rem 0;
-    filter: d;
+    filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.7));
 }
 
 .hero-subtitle {
     font-size: 1.1rem;
     margin-bottom: 1.5rem;
-    color: 600;
-
-    /* text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6) */
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
     font-family: 'Wanted', sans-serif;
     font-weight: 600;
     letter-spacing: -0.02rem;
@@ -112,9 +105,7 @@ a:hover {
     align-items: center;
     justify-content: space-between;
     padding: 1rem 2rem;
-    background-color: #0a0a0a;
-
-    /* Dark header reminiscent of the original site */
+    background-color: #0a0a0a; /* Dark header reminiscent of the original site */
     width: 100%;
     z-index: 1000;
     position: sticky;
@@ -147,31 +138,28 @@ a:hover {
 
 .btn {
     display: inline-block;
-    background-color: #ff8f03;
-
-    /* color: #fff */
+    background-color: #c87f2f;
+    color: #fff;
     padding: 0.75rem 1.5rem;
-    border-radius: 19.9px;
+    border-radius: 4px;
     font-weight: bold;
     transition: background-color 0.3s;
-    color: #f5e8db;
-    font-size: 150%;
 }
 
 .btn:hover {
-    background-color: #f1f1f1;
+    background-color: #a86624;
 }
 
 .btn.secondary {
     background-color: #6c5239;
 }
-
 .btn.secondary:hover {
     background-color: #543f2c;
 }
 
 /* Sections */
 /* Remove the constrained main container; sections should span full width unless explicitly constrained. */
+
 /* Remove default margins from all sections so backgrounds butt together without dead space. */
 section {
     margin: 0;
@@ -273,13 +261,10 @@ section {
         align-items: center;
         gap: 3rem;
     }
-
-    .town-image,
-    .town-text {
+    .town-image, .town-text {
         flex: 1;
     }
 }
-
 .character p {
     font-size: 0.9rem;
     color: #5a4633;
@@ -293,9 +278,7 @@ section {
 
 /* Game showcase section */
 .game-showcase {
-    background-color: #090a0b;
-
-    /* Dark blue to match night theme */
+    background-color: #1a2332; /* Dark blue to match night theme */
     padding: 3rem 0;
 }
 
@@ -320,15 +303,12 @@ section {
     .posts {
         grid-template-columns: 1fr 1fr;
     }
-
     .hero-title {
         font-size: 4rem;
     }
-
     .hero-subtitle {
-        font-size: 1.1rem;
+        font-size: 1.5rem;
     }
-
     .hero {
         padding-left: 8%;
     }
@@ -336,9 +316,7 @@ section {
 
 /* Footer */
 .footer {
-    background-color: #1a2332;
-
-    /* Dark blue to match night theme */
+    background-color: #1a2332; /* Dark blue to match night theme */
     color: #f5e9dc;
     padding: 1.5rem 1rem;
     text-align: center;
@@ -354,9 +332,7 @@ section {
     max-width: 960px;
     margin: 0 auto;
     padding: 2rem 1rem;
-    background-color: #2d4a3d;
-
-    /* Dark green to match hero */
+    background-color: #2d4a3d; /* Dark green to match hero */
 }
 
 /* SFX section used for dynamic backgrounds. Fills the width of the page and uses an animated GIF as a backdrop. */
@@ -372,10 +348,8 @@ section {
     position: relative;
     overflow: hidden;
     width: 100%;
-
     /* No margin so sections butt up seamlessly */
     margin: 0;
-
     /* Set a minimum height so the GIF backgrounds occupy more vertical space */
     min-height: 90vh;
 }
@@ -388,7 +362,6 @@ section {
 /* Assign unique GIF backgrounds to each SFX section variant */
 .sfx-section.vfx {
     background-image: url('assets/visual-effects-animation.gif');
-
     /* Scale the GIF to 200% width like other backgrounds and crop vertically */
     background-size: 200% 100%;
     background-repeat: no-repeat;
@@ -398,7 +371,6 @@ section {
 .sfx-section.sfx17 {
     background-image: url('assets/special-effect-green-animation.gif');
     background-color: #366657;
-
     /* Scale the GIF to 200% width and crop vertically so the section height
        remains moderate. */
     background-size: 200% 100%;
@@ -413,7 +385,6 @@ section {
     background-color: #366657;
     background-size: 200% 100%;
     background-repeat: no-repeat;
-
     /* Reduce the minimum height for the middle section so it isn’t as tall as the others */
     min-height: 80vh;
 }
@@ -422,7 +393,6 @@ section {
 /* Constrain the stat‑sheet overlay a bit wider on larger screens for better use of space */
 .stat-sheet {
     position: relative;
-
     /* Allow the stat sheet to grow a bit wider on larger screens */
     max-width: 750px;
     width: 90%;
@@ -439,22 +409,17 @@ section {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
     /* Constrain the overlay to ensure paragraphs stay inside the parchment while providing more space */
     /* Make the content area narrower on desktop so there’s ample margin between the text and the parchment edges */
     width: 80%;
     text-align: center;
-
     /* Use a near‑black brown for the text on the parchment to improve contrast */
     color: #352315;
-
     /* Remove tinted backgrounds on desktop so the parchment artwork shows through */
     background-color: transparent;
-
     /* Apply very large padding on all sides (exactly 125px) to ensure the text sits well within the parchment */
     padding: 7.8125rem;
     border-radius: 8px;
-
     /* Ensure long words wrap within the card */
     word-break: break-word;
 }
@@ -462,10 +427,8 @@ section {
 .stat-content h2 {
     /* Provide extra space below the heading */
     margin-bottom: 0.75rem;
-
     /* Increase the heading size on desktop for better hierarchy */
     font-size: 3.8rem;
-
     /* Use a near‑black colour for headings on the parchment for strong contrast */
     color: #111111;
 }
@@ -475,7 +438,6 @@ section {
     font-size: 1.25rem;
     line-height: 1.6;
     margin-bottom: 1rem;
-
     /* Use near‑black text for high contrast on the parchment */
     color: #111111;
 }
@@ -487,11 +449,9 @@ section {
         max-width: 100%;
         width: 100%;
     }
-
     .stat-sheet-image {
         display: none;
     }
-
     .stat-content {
         /* Reset positioning so content flows naturally when the stat sheet image is hidden */
         position: static;
@@ -500,7 +460,6 @@ section {
         top: auto;
         margin: 0 auto;
         width: 95%;
-
         /* Provide a subtle tan background behind the text on mobile */
         background-color: #f5e9dc;
         color: #111111;
@@ -508,20 +467,17 @@ section {
         border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
-
     .stat-content h2 {
         /* Darken headings on mobile for better contrast against the light panel */
         color: #352315;
         font-size: 1.8rem;
         margin-bottom: 0.75rem;
     }
-
     .stat-content p {
         color: #352315;
         font-size: 1rem;
         line-height: 1.5;
     }
-
     /* On mobile, make SFX sections taller to showcase the GIF backgrounds */
     .sfx-section {
         /* On small screens, give even more vertical space to show off the animated backgrounds */
@@ -548,20 +504,17 @@ main > article {
     margin: 2rem auto;
     max-width: 960px;
 }
-
 main > article h1,
 main > article h2,
 main > article h3 {
     color: #352315;
 }
-
 main > article p {
     color: #333333;
     font-family: Helvetica, Arial, sans-serif;
     font-size: 14px;
     line-height: 1.65;
 }
-
 /* Custom overrides for stat sheet and blog cards */
 /* Shift parchment image left */
 .stat-sheet-image {
@@ -588,11 +541,12 @@ main > article p {
     .stat-sheet-image {
         display: none !important;
     }
-
     .stat-content {
         padding: 0.625rem !important;
-    }
-}
+   }
+ }
+
+
 
 .post {
     background-color: #f9efe3;
@@ -600,11 +554,9 @@ main > article p {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 .post h3 a {
     color: #3b1d0b;
 }
-
 .post p {
     color: #5a4633;
 }
@@ -982,16 +934,8 @@ main > article p {
 }
 
 @keyframes pulse {
-    0%,
-    100% {
-        transform: scale(1);
-        opacity: 0.5;
-    }
-
-    50% {
-        transform: scale(1.1);
-        opacity: 0.8;
-    }
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.1); opacity: 0.8; }
 }
 
 .steam-cta h2 {
@@ -1052,14 +996,8 @@ main > article p {
 }
 
 @keyframes float {
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
 
 .floating-cta .btn-steam {

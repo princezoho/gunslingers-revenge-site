@@ -1,4 +1,5 @@
 /* Full-screen background styles for Gunslinger's Revenge */
+
 /* Full backgrounds with no overlays */
 .full-bg-section {
     position: relative;
@@ -10,18 +11,14 @@
 /* Graveyard background - fills entire section */
 .bg-graveyard {
     background: url('assets/gunslingers-revenge-test-bgs copy.gif') center/cover no-repeat;
-    background-color: #4a5c5a;
-
-    /* Teal/purple graveyard tone */
+    background-color: #4a5c5a; /* Teal/purple graveyard tone */
     background-attachment: fixed;
 }
 
 /* Night menu background - fills entire section */
 .bg-night {
     background: url('assets/gunslingers-revenge-next-night-bg-menu.gif') center/cover no-repeat;
-    background-color: #1a2332;
-
-    /* Dark blue night sky */
+    background-color: #1a2332; /* Dark blue night sky */
     background-attachment: fixed;
 }
 
@@ -66,66 +63,50 @@
 /* Specific character backgrounds with matching colors from actual GIFs */
 .bg-char-gunslinger {
     background-image: url('assets/gunslingers-revenge-char-02-idel.gif');
-    background-color: #366657;
-
-    /* Green like the screenshot */
+    background-color: #366657; /* Green like the screenshot */
 }
 
 .bg-char-attack {
     background-image: url('assets/gunslingers-revenge-char-08-attack.gif');
-    background-color: #366657;
-
-    /* Green background */
+    background-color: #366657; /* Green background */
 }
 
 .bg-char-skeleton {
     background-image: url('assets/gunslingers-revenge-skelly.gif');
-    background-color: #4a5c5a;
-
-    /* Graveyard teal */
+    background-color: #4a5c5a; /* Graveyard teal */
 }
 
 .bg-char-ghost {
     background-image: url('assets/gunslingers-revenge-ghost-coyote.gif');
-    background-color: #4a5c5a;
-
-    /* Graveyard teal */
+    background-color: #4a5c5a; /* Graveyard teal */
 }
 
 .bg-char-special {
     background-image: url('assets/gunslingers-revenge-char-14-attack.gif');
-    background-color: #366657;
-
-    /* Green */
+    background-color: #366657; /* Green */
 }
 
 .bg-char-dual {
     background-image: url('assets/gunslingers-revenge-char-21-attack2.gif');
-    background-color: #366657;
-
-    /* Green */
+    background-color: #366657; /* Green */
 }
 
 /* Special effects backgrounds */
 .bg-sfx-green {
     background: url('assets/sfx17.gif') center/cover no-repeat;
-    background-color: #366657;
-
-    /* Green to match the effect */
+    background-color: #366657; /* Green to match the effect */
 }
 
 .bg-sfx-tan {
     background: url('assets/sfx26.gif') center/cover no-repeat;
-    background-color: #8b7355;
-
-    /* Tan/brown desert tone */
+    background-color: #8b7355; /* Tan/brown desert tone */
 }
 
 /* Ensure stat sheets are readable and properly sized */
 .stat-sheet {
     position: relative;
     z-index: 10;
-    max-width: 2000px;
+    max-width: 750px;
     width: 100%;
     margin: 0 auto;
 }
@@ -185,7 +166,7 @@
 
 /* Dark overlay for text readability when needed */
 .content-overlay {
-    /* background: rgba(0, 0, 0, 0.7) */
+    background: rgba(0, 0, 0, 0.7);
     padding: 2rem;
     border-radius: 12px;
     backdrop-filter: blur(5px);
@@ -198,12 +179,12 @@
         background-position: top center;
         padding-top: 15rem;
     }
-
+    
     .content-side {
         max-width: 100%;
         margin: 0 auto;
     }
-
+    
     .full-bg-section {
         background-attachment: scroll;
     }
